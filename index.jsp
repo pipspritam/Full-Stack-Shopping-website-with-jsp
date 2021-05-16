@@ -13,7 +13,7 @@
         
         Statement stmt=con.createStatement(); 
         ResultSet rs=stmt.executeQuery("select * from item");
-        // int i = 0;
+        
         %>
             <div class="container">
         <%
