@@ -32,16 +32,36 @@
             <p>
                 Discount Price: <span>&#8377;</span> <%= final_price %>
             </p>
+    <%
+            if(rs.getInt(5) > 0){
+    %>
             <p>
                 Quantity: <%= rs.getInt(5) %>
             </p>
             <form action="#">
                 <input type="submit" value="remove" >
             </form>
+    <%
+            } else {
+    %>
+            <p>
+                Out of Stock
+            </p>
+    <%
+            }
+    %>
+            
         </div> <hr>
+
 <%
-        } 
-        if(flag == false){
+        }
+        if(flag){
+%>
+        <form action="#">
+            <input type="submit" value="Place Order" >
+        </form>
+<%
+    }if(flag == false){
 %>
         <p>Oops your cart is empty!</p>
         <p>Continue shopping <a href="./index.jsp">Shop Now</a></p>
