@@ -1,3 +1,5 @@
+<html>
+        <head>
 <%@ include file="dbconnect.jsp" %>
 <%@ include file="navbar.jsp" %>
 <%
@@ -7,8 +9,7 @@
         ResultSet rs=stmt.executeQuery("select product_name, price, discount, price, item.quantity, cart.quantity  from item, cart where cart.product_id=item.product_id and cart.email='"+email+"'");
         boolean flag = false;
 %>
-    <html>
-        <head>
+    
             <title>
                 My Cart
             </title>
@@ -65,10 +66,15 @@
 %>
         <p>Oops your cart is empty!</p>
         <p>Continue shopping <a href="./index.jsp">Shop Now</a></p>
-        </body>
-    </html>
+
 <%
     }
     } catch (Exception e){
     }
+
 %>
+<div class="footer-wrapper">
+    <%@ include file="footer.html" %>
+</div>
+</body>
+</html>

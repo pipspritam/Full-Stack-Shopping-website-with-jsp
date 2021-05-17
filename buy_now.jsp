@@ -64,5 +64,8 @@
 	    catch (Exception e) { 
 		}
     %>
+    <div class="footer-wrapper">
+        <%@ include file="footer.html" %>
+    </div>
     </body>
 </html>
