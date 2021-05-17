@@ -68,8 +68,8 @@
 		}
         %>
 
-    <footer>
+    <div class="footer-wrapper">
         <%@ include file="footer.html" %>
-    </footer>
+    </div>
     </body>
 </html>
