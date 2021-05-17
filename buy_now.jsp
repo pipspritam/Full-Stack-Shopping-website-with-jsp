@@ -5,7 +5,25 @@
         <title>
             Buy Now
         </title>
+        <script type="text/javascript">
+            function validate()
+            {
+                var address = document.getElementById("address");
+                if(address.value.trim()=="")
+                {
+                    alert("address cann't be empty");
+                    address.style.border = "solid 3px red";
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+    
+        </script>
     </head>
+    
     <body>
     <%
         String id = request.getParameter("ID");
@@ -31,12 +49,12 @@
             <p>
                 Discount Price: <span>&#8377;</span> <%= final_price %>
             </p>
-            <form action="./process_buy_now.jsp" method="POST">
+            <form onsubmit="return validate();" action="./process_buy_now.jsp" method="POST">
                 <input type="hidden" name="ID" value="<%= id %>">
-                <label for="qunatity">Quantity: </label>
-                <input type="text" name="quantity" id="quantity" value="1"> <br>
-                <label for="address">Delivery Address: </label> 
-                <input type="text" name="address" id="address" value="<%= rs1.getString(5) %>"> <br>
+                Quantity:
+                <input type="number" name="quantity" id="quantity" value="1"> <br>
+                Delivery Address:
+                <input type="text" name="address" id="address" value="<%= rs1.getString(5)%>"> <br>
                 <input type="submit" value="PROCESS ORDER">
             </form>
         </div>

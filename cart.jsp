@@ -4,7 +4,7 @@
     try{
         String email = (String)session.getAttribute("email");
         Statement stmt=con.createStatement();
-        ResultSet rs=stmt.executeQuery("select product_name, price, discount, price, cart.quantity from item, cart where cart.product_id=item.product_id and cart.email='"+email+"'");
+        ResultSet rs=stmt.executeQuery("select product_name, price, discount, price, item.quantity, cart.quantity  from item, cart where cart.product_id=item.product_id and cart.email='"+email+"'");
         boolean flag = false;
 %>
     <html>
@@ -20,7 +20,7 @@
 <%
         while(rs.next()){
             flag = true;
-            double final_price = (rs.getInt(4)*(100 - rs.getInt(3)))/100;
+            int final_price = (rs.getInt(4)*(100 - rs.getInt(3)))/100;
 %>
         <div class="card">
             <p>
@@ -33,10 +33,10 @@
                 Discount Price: <span>&#8377;</span> <%= final_price %>
             </p>
     <%
-            if(rs.getInt(5) > 0){
+            if(Integer.parseInt(rs.getString(5)) > 0){
     %>
             <p>
-                Quantity: <%= rs.getInt(5) %>
+                Quantity: <%= rs.getInt(6) %>
             </p>
             <form action="#">
                 <input type="submit" value="remove" >

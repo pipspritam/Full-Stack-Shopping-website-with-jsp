@@ -40,7 +40,7 @@
             Delivery Details
             <strong><%= rs1.getString("name") %></strong> <%= addr %>
         </p>
-        <form action="./payment.jsp">
+        <form action="./payment.jsp" method="POST">
             <input type="hidden" name="payable" value="<%= qty*final_price %>">
             <input type="hidden" name="address" value="<%= addr %>">
             <input type="hidden" name="ID" value="<%= id %>">
