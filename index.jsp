@@ -67,5 +67,9 @@
 	    catch (Exception e) { 
 		}
         %>
+
+    <footer>
+        <%@ include file="footer.html" %>
+    </footer>
     </body>
 </html>
