@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    font-family: 'Roboto', sans-serif;
+    width: min(90%, 70rem);
+    margin: 0 auto;
+}
+.product{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 450px auto;
+    column-gap: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+    margin: 20px 0;
+}
+.product:last-child{
+    border: none;
+}
+.product-img img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+.product-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    padding-top: 5px;
+}
+.product-btn{
+    width: 100%;
+    height: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #ff9f00;
+    color: white;
+    transition: background-color 200ms ease-in-out;
+}
+.product-btn:hover{
+    background-color: #fb641b;
+}
+.product-btn a{
+    text-decoration: none;
+    color: white;
+}
+.out{
+    font-size: 2rem;
+    color: red;
+    text-align: center;
+    padding: 5px 0;
+}
+.product-name{
+    line-height: 1.3;
+    
+}
+.price{
+    margin: 10px 0;
+}
+
+.discount-price span:nth-child(1),
+.discount-price strike{
+    color: red;
+}
+.discount-price span:last-child{
+    font-size: 1.3rem;
+    color: green;
+}
+.description{
+    line-height: 1.7;
+}

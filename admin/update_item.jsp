@@ -10,7 +10,7 @@
     <body>
         <%
         try {
-            Statement stmt=con.createStatement(); 
+            Statement stmt=con.createStatement();
             ResultSet rs1=stmt.executeQuery("select count(*) from item");
             rs1.next();
             int numberOfProducts = Integer.parseInt(rs1.getString(1));

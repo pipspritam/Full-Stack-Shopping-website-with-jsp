@@ -65,7 +65,6 @@
             }
     
         </script>
-        
     </head>
         <body>
         <%

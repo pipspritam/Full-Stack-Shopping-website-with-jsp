@@ -25,6 +25,7 @@
     </head>
     
     <body>
+        <div class="container" style="height: 100vh;">
     <%
         String id = request.getParameter("ID");
         try{
@@ -36,6 +37,7 @@
             rs1.next();
             int final_price = (rs.getInt(3)*(100 - rs.getInt(6)))/100;
     %>
+    
         <h1>
             ORDER DETAILS
         </h1>
@@ -58,13 +60,14 @@
                 <input type="submit" value="PROCESS ORDER">
             </form>
         </div>
+    </div>
     <%  
         con.close();
         }
 	    catch (Exception e) { 
 		}
     %>
-    <div class="footer-wrapper">
+    <div >
         <%@ include file="footer.html" %>
     </div>
     </body>

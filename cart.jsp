@@ -15,6 +15,7 @@
             </title>
         </head>
         <body>
+            <div style="height: 100vh;">
             <h1>
                 My Cart
             </h1>
@@ -73,7 +74,8 @@
     }
 
 %>
-<div class="footer-wrapper">
+</div>
+<div >
     <%@ include file="footer.html" %>
 </div>
 </body>
