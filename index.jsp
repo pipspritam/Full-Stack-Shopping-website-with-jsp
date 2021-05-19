@@ -21,11 +21,14 @@
             while(rs.next())
             {
                 int discountPrice = (rs.getInt(3)*(100 - rs.getInt(6)))/100;
+                String imgName = rs.getString(1) + ".jpg";
+                String img_path = "./image/";
         %>
         
         <div class="product">
             <div class="product-img">
-                <img src="./image/product-1.jpg" alt="shoe">
+
+                <img src="<%= img_path+imgName %>" alt="./image/product-1.jpg">
                 <%
                     if(rs.getInt(5) > 0){
                         if(((String)session.getAttribute("email"))!=null){
