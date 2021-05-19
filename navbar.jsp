@@ -30,6 +30,15 @@
         .navbar h1{
             margin-right: auto;
         }
+        .navbar h1 a{
+            text-decoration: none;
+            color: white;
+            transition: 300ms;
+        }
+        .navbar h1 a:hover{
+            
+            color: #2ecc71;
+        }
 
         .navbar ul {
             list-style: none;

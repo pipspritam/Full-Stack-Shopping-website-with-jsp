@@ -26,6 +26,16 @@
             justify-content: flex-end;
             align-items: center;
         }
+        .navbar h1 a{
+            text-decoration: none;
+            color: white;
+            transition: 300ms;
+        }
+        .navbar h1 a:hover{
+            
+            color: #2ecc71;
+        }
+
 
         .navbar h1{
             margin-right: auto;

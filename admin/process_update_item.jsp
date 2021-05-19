@@ -87,7 +87,7 @@
                     </tr>
                     <tr>
                         <td>Description: </td>
-                        <td><input id="description"  type="text" name="description" value="<%= rs.getString(4) %>"></td>
+                        <td><textarea id="description"  type="text" name="description" ><%= rs.getString(4) %></textarea></td>
                     </tr>
                     <tr>
                         <td>Quantity: </td>
@@ -103,7 +103,8 @@
                     </tr>
                     <tr>
                         <td>Category: </td>
-                        <td><select id="category" name="category" value="<%= rs.getString(8) %>">
+                        <td><select id="category" name="category">
+                            <option option selected="selected"><%= rs.getString(8) %></option>
                             <option value="Electronics">Electronics</option>
                             <option value="Appliances">Appliances</option>
                             <option value="Men">Men</option>

@@ -5,7 +5,7 @@
     <%@ include file="navbar.jsp" %>
     
     <title>Home Page</title>
-    <link rel="stylesheet" href="./homeMain.css">
+    <link rel="stylesheet" href="./home.css">
 </head>
 <body>
     <div class="container">
