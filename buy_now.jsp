@@ -46,18 +46,31 @@
                 <%= rs.getString(2) %>
             </p>
             <p>
-                Price:  <span>&#8377;</span><%= rs.getString(3) %>
-            </p>
-            <p>
-                Discount Price: <span>&#8377;</span> <%= final_price %>
+                Price:  <span>&#8377;</span><%= final_price %> <span><strike>&#8377;<%= rs.getString(3) %></strike></span> <span><%= rs.getString(6) %>% off</span>
             </p>
             <form onsubmit="return validate();" action="./process_buy_now.jsp" method="POST">
                 <input type="hidden" name="ID" value="<%= id %>">
-                Quantity:
-                <input type="number" name="quantity" id="quantity" value="1"> <br>
-                Delivery Address:
-                <input type="text" name="address" id="address" value="<%= rs1.getString(5)%>"> <br>
-                <input type="submit" value="PROCESS ORDER">
+                <table cellspacing="10">
+                    <tr>
+                        <td>Quantity:</td>
+                        <td>
+                            <input type="number" name="quantity" id="quantity" value="1"> <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Delivery Address:
+                        </td>
+                        <td>
+                            <textarea name="address" id="address"><%= rs1.getString("address") %></textarea> <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="PROCESS ORDER">
+                        </td>
+                    </tr>
+                </table>
             </form>
         </div>
     </div>
