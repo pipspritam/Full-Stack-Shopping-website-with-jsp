@@ -7,6 +7,9 @@
     String payment_option = request.getParameter("payment_option");
     String quantity = request.getParameter("quantity") ;
     String new_address = request.getParameter("address");
+    String del_name = request.getParameter("del_name");
+    String del_phone = request.getParameter("del_phone");
+    String del_pincode = request.getParameter("del_pincode");
     Statement stmt = con.createStatement(); 
     ResultSet rs=stmt.executeQuery("select * from users");
     Statement stmt1 = con.createStatement(); 
@@ -25,9 +28,10 @@
         <p>Phone: <%= rs.getString("phone") %></p>
         <p>Email: <%= rs.getString("email") %></p>
         <h1>Ship To</h1>
-        <p><strong><%= rs.getString("name") %></strong></p>
+        <p><strong><%= del_name%></strong></p>
+        <p>Phone: <%= del_phone %></p>
         <p><%= new_address %></p>
-        <p>Phone: <%= rs.getString("phone") %></p>
+        <p>Pincode: <%= del_pincode%></p>
         <h1>Payment Details</h1>
         <h3>Name: <%= rs1.getString(2) %></h3>
         <p>Qty: <%= quantity %></p>

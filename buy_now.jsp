@@ -9,10 +9,32 @@
             function validate()
             {
                 var address = document.getElementById("address");
+                var del_name = document.getElementById("del_name");
+                var del_phone = document.getElementById("del_phone");
+                var del_pincode = document.getElementById("del_pincode");
+                
                 if(address.value.trim()=="")
                 {
                     alert("address cann't be empty");
                     address.style.border = "solid 3px red";
+                    return false;
+                }
+                else if(del_name.value.trim()=="")
+                {
+                    alert("Name cann't be empty");
+                    del_name.style.border = "solid 3px red";
+                    return false;
+                }
+                else if(del_phone.value.trim()=="")
+                {
+                    alert("Phone number cann't be empty");
+                    del_phone.style.border = "solid 3px red";
+                    return false;
+                }
+                else if(del_pincode.value.trim()=="")
+                {
+                    alert("Pincode cann't be empty");
+                    del_pincode.style.border = "solid 3px red";
                     return false;
                 }
                 else
@@ -57,13 +79,26 @@
                             <input type="number" name="quantity" id="quantity" value="1"> <br>
                         </td>
                     </tr>
+                    <tr><td>Delivery Address</td></tr>
+                    <tr>
+                        <td>Name: </td>
+                        <td><input type="text" name="del_name" id="del_name" value="<%= rs1.getString(1)%>"></td>
+                    </tr>
+                    <tr>
+                        <td>Phone: </td>
+                        <td><input type="text" name="del_phone" id="del_phone" value="<%= rs1.getString(3)%>"></td>
+                    </tr>
                     <tr>
                         <td>
-                            Delivery Address:
+                            Address (Area & Street):
                         </td>
                         <td>
                             <textarea name="address" id="address"><%= rs1.getString("address") %></textarea> <br>
                         </td>
+                    </tr>
+                    <tr>
+                        <td>Pincode: </td>
+                        <td><input type="text" name="del_pincode" id="del_pincode"></td>
                     </tr>
                     <tr>
                         <td>
