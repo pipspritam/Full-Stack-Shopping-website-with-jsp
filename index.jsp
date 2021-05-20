@@ -28,7 +28,7 @@
         <div class="product">
             <div class="product-img">
 
-                <img src="<%= img_path+imgName %>" alt="./image/product-1.jpg">
+                <img src="<%= img_path+imgName %>" alt="./image/product-1.jpg" onerror="this.onerror=null; this.src='./image/default.jpg'">
                 <%
                     if(rs.getInt(5) > 0){
                         if(((String)session.getAttribute("email"))!=null){
