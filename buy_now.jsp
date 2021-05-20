@@ -76,7 +76,7 @@
                     <tr>
                         <td>Quantity:</td>
                         <td>
-                            <input type="number" name="quantity" id="quantity" value="1"> <br>
+                            <input type="number" min="1" name="quantity" id="quantity" value="1"> <br>
                         </td>
                     </tr>
                     <tr><td>Delivery Address</td></tr>
