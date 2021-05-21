@@ -67,6 +67,7 @@
             String del_name = request.getParameter("del_name");
             String del_phone = request.getParameter("del_phone");
             String del_pincode = request.getParameter("del_pincode");
+            String del_email = request.getParameter("del_email");
             int payable = qty*final_price;
             if(qty<= Integer.parseInt(rs.getString(5))) {
     %>
@@ -93,6 +94,10 @@
                     <td><%=del_name%></td>
                 </tr>
                 <tr>
+                    <td>Email: </td>
+                    <td><%=del_email%></td>
+                </tr>
+                <tr>
                     <td>Phone: </td>
                     <td><%=del_phone%></td>
                 </tr>
@@ -114,6 +119,7 @@
             <input type="hidden" name="final_price" value="<%= final_price %>">
             <input type="hidden" name="pname" value="<%= pname %>">
             <input type="hidden" name="del_name" value="<%= del_name %>">
+            <input type="hidden" name="del_email" value="<%= del_email %>">
             <input type="hidden" name="del_phone" value="<%= del_phone%>">
             <input type="hidden" name="del_pincode" value="<%= del_pincode %>">
             <h1>Choose Payment Option</h1>
