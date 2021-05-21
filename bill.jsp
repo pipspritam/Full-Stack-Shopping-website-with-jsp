@@ -2,7 +2,6 @@
 <%@ include file="dbconnect.jsp" %>
 <%
     String email = (String)session.getAttribute("email");
-    
     String pid = request.getParameter("ID");
     String payable = request.getParameter("payable");
     String payment_option = request.getParameter("payment_option");
@@ -38,6 +37,9 @@
         <p>Qty: <%= quantity %></p>
         <p>Payable: <%= payable %></p>
         <p>Payment Method : <%= payment_option %></p>
-    </body>
+        <br><br>
+        <p>Thank You For Shopping With Us</p>
+        <p><a href="./index.jsp" >Continue Shopping</a></p>
+   
     </body>
 </html>

@@ -7,7 +7,7 @@
         ResultSet rs=stmt.executeQuery("select product_name, price, discount, item.quantity, cart.quantity,cart.product_id from item, cart where cart.product_id=item.product_id and cart.email='"+email+"'");
         int total_payable = 0;
         Statement stmt1=con.createStatement(); 
-        ResultSet rs1=stmt1.executeQuery("select * from users where email = '" + (String)session.getAttribute("email") + "'");
+        ResultSet rs1=stmt1.executeQuery("select * from users where email = '" + email + "'");
         rs1.next();
         while(rs.next()){
             int final_price = (rs.getInt(2)*(100 - rs.getInt(3)))/100;
@@ -59,7 +59,7 @@
         </script>
     </head>
     <body>
-        <h1>Product Name: <%= rs.getString(1) %></h1>
+        <h1>Product Name: <%= rs.getString("product_name") %></h1>
         <p>Price: <%= final_price %></p>
         <p>Quantity: <%= rs.getInt(5) %></p>
         <%
@@ -71,11 +71,11 @@
                 <tr><td>Delivery Address</td></tr>
                 <tr>
                     <td>Name: </td>
-                    <td><input type="text" name="del_name" id="del_name" value="<%= rs1.getString(1)%>"></td>
+                    <td><input type="text" name="del_name" id="del_name" value="<%= rs1.getString("NAME")%>"></td>
                 </tr>
                 <tr>
                     <td>Phone: </td>
-                    <td><input type="text" name="del_phone" id="del_phone" value="<%= rs1.getString(3)%>"></td>
+                    <td><input type="text" name="del_phone" id="del_phone" value="<%= rs1.getString("PHONE")%>"></td>
                 </tr>
                 <tr>
                     <td>
@@ -87,7 +87,7 @@
                 </tr>
                 <tr>
                     <td>Pincode: </td>
-                    <td><input type="text" name="del_pincode" id="del_pincode"></td>
+                    <td><input type="text" name="del_pincode" value="<%= rs1.getString("PINCODE")%>" id="del_pincode"></td>
                 </tr>
                 <tr>
                     <td>
