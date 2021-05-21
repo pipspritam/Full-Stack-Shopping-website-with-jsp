@@ -6,6 +6,7 @@
             Order Details
         </title>
         <script>
+
             function show_card() {
                 document.getElementById("card_details").style.display = "block";
                 return true;
@@ -14,18 +15,38 @@
                 document.getElementById("card_details").style.display = "none";
                 return true;
             }
-            function radio_validate()
+            function card_details_validate()
             {
                 if(document.getElementById("COD").checked == true) {   
                     return true;
                 } 
-                else if(document.getElementById("Card").checked == true) {   
+                else if(document.getElementById("Card").checked == true) {  
+                    if(card_number.value.trim()=="")
+                    {
+                        alert("Enter a valid card number");
+                        card_number.style.border = "solid 3px red";
+                        return false;
+                    }
+                    else if(card_holder_name.value.trim()=="")
+                    {
+                        alert("Enter a valid card holder name");
+                        card_holder_name.style.border = "solid 3px red";
+                        return false;
+                    }
+                    else if(card_holder_name.value.trim()=="")
+                    {
+                        alert("Enter a valid card holder name");
+                        card_holder_name.style.border = "solid 3px red";
+                        return false;
+                    }
                     return true;
-                }else {  
+                }
+                else {  
                     alert("Select a patment method");
                     return false; 
                 }
             }
+            
         </script>
     </head>
     <body>
@@ -85,7 +106,7 @@
                 </tr>
             </table>
         </p>
-        <form action="./bill.jsp" method="POST" onsubmit="return radio_validate()">
+        <form action="./bill.jsp" method="POST" onsubmit="return card_details_validate()">
             <input type="hidden" name="payable" value="<%= payable %>">
             <input type="hidden" name="address" value="<%= addr %>">
             <input type="hidden" name="ID" value="<%= id %>">
@@ -176,7 +197,7 @@
     con.close();
     }
     catch (Exception e) { 
-        out.print("error");
+        out.print("Exception");
     }
     %>
     </body>

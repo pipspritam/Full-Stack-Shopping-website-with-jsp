@@ -8,11 +8,6 @@
         <script type="text/javascript">
             function validate()
             {
-                var address = document.getElementById("address");
-                var del_name = document.getElementById("del_name");
-                var del_phone = document.getElementById("del_phone");
-                var del_pincode = document.getElementById("del_pincode");
-                
                 if(address.value.trim()=="")
                 {
                     alert("address cann't be empty");
