@@ -52,11 +52,11 @@
         String id = request.getParameter("ID");
         try{
             Statement stmt=con.createStatement(); 
-            Statement stmt1=con.createStatement(); 
             ResultSet rs=stmt.executeQuery("select * from item where product_id = '" + id + "'");
+            Statement stmt1=con.createStatement(); 
             ResultSet rs1=stmt1.executeQuery("select * from users where email = '" + (String)session.getAttribute("email") + "'");
-            rs.next();
             rs1.next();
+            rs.next();
             int final_price = (rs.getInt(3)*(100 - rs.getInt(6)))/100;
     %>
     
