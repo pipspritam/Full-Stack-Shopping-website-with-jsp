@@ -11,6 +11,7 @@
             String email = request.getParameter("email");
             String phone = request.getParameter("phone");
             String address = request.getParameter("address");
+            String pincode = request.getParameter("pincode");
             Statement stmt=con.createStatement();
 	        ResultSet rs=stmt.executeQuery("select * from users where email='"+email+"'");
             if(rs.next())
@@ -21,7 +22,7 @@
             }
             else
             {
-                int i=stmt.executeUpdate("insert into users values ('"+name+"','"+email+"','"+phone+"','"+newpassword+"','"+address+"')");
+                int i=stmt.executeUpdate("insert into users values ('"+name+"','"+email+"','"+phone+"','"+newpassword+"','"+address+"','"+pincode+"')");
                 %><center><h1 style="background-color:rgb(65, 177, 50);"><%=name%>, You are registered successfully</h1></center><%
                 %> <center><p>Login here <a href="login.jsp">Login</a></p></center> <%
             }

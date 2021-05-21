@@ -52,7 +52,7 @@
         if(flag){
 %>           
                 <div class="order-div">
-                    <!-- <input type="submit" value="REFRESH PRICE"> -->
+                    
                     <input type="submit" value="PLACE ORDER">
                 </div>
             </div>

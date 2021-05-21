@@ -33,7 +33,7 @@
         String id = request.getParameter("ID");
         try{
             Statement stmt=con.createStatement();
-            ResultSet rs=stmt.executeQuery("select product_name, price, discount, item.quantity, cart.quantity,cart.product_id from item, cart where cart.product_id=item.product_id and cart.email='"+email+"'");
+            ResultSet rs=stmt.executeQuery("select * from item where product_id='"+id+"'");
             int total_payable = 0;
             Statement stmt1=con.createStatement(); 
             ResultSet rs1=stmt1.executeQuery("select * from users where email = '" + (String)session.getAttribute("email") + "'");

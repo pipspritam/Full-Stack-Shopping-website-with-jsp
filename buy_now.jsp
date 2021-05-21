@@ -53,7 +53,7 @@
         try{
             Statement stmt=con.createStatement(); 
             ResultSet rs=stmt.executeQuery("select * from item where product_id = '" + id + "'");
-            Statement stmt1=con.createStatement(); 
+            Statement stmt1=con.createStatement();
             ResultSet rs1=stmt1.executeQuery("select * from users where email = '" + (String)session.getAttribute("email") + "'");
             rs1.next();
             rs.next();
@@ -76,7 +76,7 @@
                     <tr>
                         <td>Quantity:</td>
                         <td>
-                            <input type="number" min="1" name="quantity" id="quantity" value="1"> <br>
+                            <input type="number" min="1" name="quantity" id="quantity" value="1" max="9"> <br>
                         </td>
                     </tr>
                     <tr><td>Delivery Address</td></tr>
@@ -98,7 +98,7 @@
                     </tr>
                     <tr>
                         <td>Pincode: </td>
-                        <td><input type="text" name="del_pincode" id="del_pincode"></td>
+                        <td><input type="text" name="del_pincode" id="del_pincode" value="<%= rs1.getString(6)%>" ></td>
                     </tr>
                     <tr>
                         <td>

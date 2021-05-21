@@ -1,7 +1,8 @@
 <%@ include file="navbar.jsp" %>
 <%@ include file="dbconnect.jsp" %>
 <%
-    String name = (String)session.getAttribute("email");
+    String email = (String)session.getAttribute("email");
+    
     String pid = request.getParameter("ID");
     String payable = request.getParameter("payable");
     String payment_option = request.getParameter("payment_option");
@@ -11,7 +12,7 @@
     String del_phone = request.getParameter("del_phone");
     String del_pincode = request.getParameter("del_pincode");
     Statement stmt = con.createStatement(); 
-    ResultSet rs=stmt.executeQuery("select * from users");
+    ResultSet rs=stmt.executeQuery("select * from users where email='"+email+"'");
     Statement stmt1 = con.createStatement(); 
     ResultSet rs1=stmt1.executeQuery("select * from item where product_id='" + pid + "'");
     rs.next();

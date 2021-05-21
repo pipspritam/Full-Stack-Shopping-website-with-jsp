@@ -11,6 +11,7 @@
                 var pass = document.getElementById("pass");
                 var cpass = document.getElementById("cpass");
                 var address = document.getElementById("address");
+                var pincode = document.getElementById("pincode");
                 if(name.value.trim()=="")
                 {
                     alert("Name cann't be empty");
@@ -45,6 +46,12 @@
                 {
                     alert("Address cann't be empty");
                     address.style.border = "solid 3px red";
+                    return false;
+                }
+                else if(pincode.value.trim()=="")
+                {
+                    alert("Pincode cann't be empty");
+                    pincode.style.border = "solid 3px red";
                     return false;
                 }
                 else if(pass.value!=cpass.value)
@@ -93,6 +100,10 @@
                         <tr>
                             <td>Enter Address: </td>
                             <td><input id="address"  type="text" name="address"></td>
+                        </tr>
+                        <tr>
+                            <td>Enter Pincode: </td>
+                            <td><input id="pincode"  type="text" name="pincode"></td>
                         </tr>
                         <tr>
                             <td></td><td colspan="2"><input  type="Submit" value="Register"></td>
