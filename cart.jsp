@@ -29,8 +29,11 @@
             total_payable += (final_price * rs.getInt(6));
             String imgName = rs.getString(7) + ".jpg";
             String img_path = "./image/";
+            
+                
 %>
             <form action="./remove_from_cart.jsp">
+                <input type="hidden" name="ID" value="<%= rs.getString(7) %>">
                 <div class="cart-product">
                     <div class="c-product-img">
                         <img src="<%= img_path+imgName %>" alt="./image/product-1.jpg" onerror="this.onerror=null; this.src='./image/default.jpg'">
@@ -40,7 +43,9 @@
                         <h3><span>&#8377;</span><%= final_price %></h3>
                     </div>
                     <input type="number" value="<%= rs.getInt(6) %>" min="0" max="9">
-                    <input type="submit" value="REMOVE">
+                    
+                    <!-- <input type="submit" value="REMOVE"> -->
+                    <button  type="submit" formaction="./remove_from_cart.jsp">REMOVE</button>
                 </div>
             </form>
                 <%
