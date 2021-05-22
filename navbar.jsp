@@ -87,6 +87,7 @@
         <ul>
             <li><a href="#">Contact</a></li>
             <li><a href="./cart.jsp">Cart</a></li>
+            <li><a href="./my_orders.jsp">My Orders</a></li>
         </ul>
         <%
             if(((String)session.getAttribute("email"))==null){
