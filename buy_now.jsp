@@ -86,7 +86,7 @@
                 </div>
                 <div class="input-box">
                     <label for="email">Email</label>
-                    <input name="del_email" type="text" id="del_email" value="<%= rs1.getString(2)%>">
+                    <input name="del_email" type="email" id="del_email" value="<%= rs1.getString(2)%>">
                 </div>
                 <div class="input-box">
                     <label for="phone">Phone</label>

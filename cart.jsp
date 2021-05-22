@@ -42,9 +42,9 @@
                         <h4><%= rs.getString(1) %></h4>
                         <h3><span>&#8377;</span><%= final_price %></h3>
                     </div>
-                    <input type="number" value="<%= rs.getInt(5) %>" min="0" max="9">
-                    
-                    
+                    <button formaction="./update_quantity_neg.jsp">-</button>
+                    <input type="number"  value="<%= rs.getInt(5) %>" min="1" max="9">
+                    <button formaction="./update_quantity.jsp">+</button>
                     <button class="button" formaction="./remove_from_cart.jsp">REMOVE</button>
                 </div>
             </form>
