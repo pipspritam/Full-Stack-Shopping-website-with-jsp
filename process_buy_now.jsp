@@ -22,7 +22,7 @@
         {
             if(document.getElementById("COD").checked == true) {   
                 return true;
-            } 
+            }
             else if(document.getElementById("Card").checked == true) {  
                 if(card_number.value.trim()=="")
                 {
