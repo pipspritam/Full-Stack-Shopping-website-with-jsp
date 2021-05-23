@@ -4,7 +4,7 @@
     <%@ include file="dbconnect.jsp" %>
     <%@ include file="navbar.jsp" %>
     <title>CART</title>
-    <link rel="stylesheet" href="cartUpdate.css">
+    <link rel="stylesheet" href="cart.css">
 </head>
 <body>
     <%
