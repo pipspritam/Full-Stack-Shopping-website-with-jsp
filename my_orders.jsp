@@ -17,7 +17,7 @@
         boolean flag = false;
         try{
             Statement stmt=con.createStatement(); 
-            ResultSet rs=stmt.executeQuery("select * from orders where user_email='" + email + "'");
+            ResultSet rs=stmt.executeQuery("select * from orders where user_email='" + email + "' order by buy_date desc");
             while(rs.next()){
                 flag = true;                
 
