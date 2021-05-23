@@ -32,10 +32,10 @@
                     <%= rs.getString(2) %>
                 </h1>
                 <h2> MRP: 
-                    <span>&#8377;</span><%= rs.getInt(3) %>
+                    <span>&#8377;</span><%= pretty_print_price(Integer.toString(rs.getInt(3))) %>
                 </h2> 
                 <h2> Discounted Price: 
-                    <span>&#8377;</span><%= discountPrice %>
+                    <span>&#8377;</span><%= pretty_print_price(Integer.toString(discountPrice)) %>
                 </h2> 
                 <h2> Quantity: 
                     <%= rs.getInt(5) %>

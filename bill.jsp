@@ -100,9 +100,9 @@
                 <div class="product-details-div">
                     <div class="product-details">
                         <h3><%= rs1.getString(2) %></h3>
-                        <p>Price: <span>&#8377;</span><%= final_price %></p>
+                        <p>Price: <span>&#8377;</span><%= pretty_print_price(final_price) %></p>
                         <p>Quantity: <span><%= quantity %></span></p>
-                        <p>Payable: <span><%= payable %></span></p>
+                        <p>Payable: <span><%= pretty_print_price(payable) %></span></p>
                         <p>Payment Method: <span><%= payment_option %></span></p>
                     </div>
                 </div>

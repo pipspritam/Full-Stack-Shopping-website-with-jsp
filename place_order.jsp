@@ -60,12 +60,12 @@
     </head>
     <body>
         <h1>Product Name: <%= rs.getString("product_name") %></h1>
-        <p>Price: <%= final_price %></p>
+        <p>Price: <%= pretty_print_price(Integer.toString(final_price)) %></p>
         <p>Quantity: <%= rs.getInt(5) %></p>
         <%
         }
         %>
-        <p>Total Payable: <strong><%= total_payable %></strong></p>
+        <p>Total Payable: <strong><%= pretty_print_price(Integer.toString(total_payable)) %></strong></p>
         <form onsubmit="return validate();" action="./process_cart_order.jsp" method="POST">
             <table cellspacing="10">
                 <tr><td>Delivery Address</td></tr>

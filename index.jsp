@@ -60,7 +60,7 @@
             <div class="product-des">
                 <h2 class="product-name"><%= rs.getString(2) %></h2>
                 <div class="price">
-                    <h1><span>&#8377;</span><%= discountPrice %></h1>
+                    <h1><span>&#8377;</span><%= pretty_print_price(Integer.toString(discountPrice)) %></h1>
                     <div class="discount-price">
                     <span>&#8377;</span><strike><%= rs.getString(3) %></strike><span>&emsp;<%= rs.getString(6) %>% off</span>
                     </div>
