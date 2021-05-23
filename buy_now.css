@@ -60,6 +60,9 @@
   .address-div .input-box {
     width: 100%;
   }
+  .address-div .number input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
   .address-div input,
   .address-div textarea {
     width: 100%;

@@ -88,13 +88,13 @@
                     <label for="email">Email</label>
                     <input name="del_email" type="email" id="del_email" value="<%= rs1.getString(2)%>">
                 </div>
-                <div class="input-box">
+                <div class="input-box number">
                     <label for="phone">Phone</label>
-                    <input type="number" name="del_phone" id="del_phone" value="<%= rs1.getString(3)%>">
+                    <input  type="number" name="del_phone" id="del_phone" value="<%= rs1.getString(3)%>">
                 </div>
-                <div class="input-box">
+                <div class="input-box number">
                     <label for="pincode">Pincode</label>
-                    <input name="del_pincode"  type="number" id="del_pincode" value="<%= rs1.getString(6)%>">
+                    <input  name="del_pincode"  type="number" id="del_pincode" value="<%= rs1.getString(6)%>">
                 </div>
 
 

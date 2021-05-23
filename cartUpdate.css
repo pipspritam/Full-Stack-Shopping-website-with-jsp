@@ -63,7 +63,23 @@ body{
     padding: 5px 10px;
     width:100%;
 }
-
+.cart-product .quantity-btn {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+  }
+  .cart-product .quantity-btn input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  .cart-product .quantity-btn button {
+    border: none;
+    outline: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2rem;
+  }
 .cart-product .button{
     width: 100px;
     padding:10px 0;

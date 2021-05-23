@@ -4,7 +4,7 @@
     <%@ include file="dbconnect.jsp" %>
     <%@ include file="navbar.jsp" %>
     <title>CART</title>
-    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="cartUpdate.css">
 </head>
 <body>
     <%
@@ -42,10 +42,13 @@
                         <h4><%= rs.getString(1) %></h4>
                         <h3><span>&#8377;</span><%= final_price %></h3>
                     </div>
+                    <div class="quantity-btn">
                     <button formaction="./update_quantity_neg.jsp">-</button>
                     <input type="number"  value="<%= rs.getInt(5) %>" min="1" max="9">
                     <button formaction="./update_quantity.jsp">+</button>
+                </div>
                     <button class="button" formaction="./remove_from_cart.jsp">REMOVE</button>
+                
                 </div>
             </form>
                 <%

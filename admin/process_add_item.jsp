@@ -29,9 +29,8 @@
             else
             {
                 int i=stmt.executeUpdate("insert into item values ('"+pid+"','"+pname+"',"+price+",'"+description+"',"+quantity+","+discount+",'"+company+"','"+category+"')");
-%>
-            <h1>Product has been added! Return to <a href="./admin_index.jsp">Home Page</a></h1>
-<%
+                session.setAttribute("new_pid",pid);
+                response.sendRedirect("./up.jsp");
             }
             con.close();
         }
