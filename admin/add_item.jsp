@@ -72,7 +72,7 @@
     <body>
         
         <div >
-            <form  onsubmit="return validate()" action="process_add_item.jsp" method="post">
+            <form  onsubmit="return validate()" action="process_add_item.jsp" method="post" enctype="multipart/form-data">
                 <div>
                 <center><h4>Add Item</h4></center>
                     <table  cellspacing="10">
@@ -114,6 +114,10 @@
                                 <option value="Sports">Sports</option>
                                 <option value="Books">Books</option>
                               </select></td>
+                        </tr>
+                        <tr>
+                            <td>Add Product Image</td> 
+                            <td><input type="file" name="uploadfile" size="50"></td>
                         </tr>
                         <tr>
                             <td></td><td colspan="2"><input  type="Submit" value="Add Product"></td>
