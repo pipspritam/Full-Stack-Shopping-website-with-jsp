@@ -40,7 +40,7 @@
                     </div>
                     <div class="c-product-details">
                         <h4><%= rs.getString(1) %></h4>
-                        <h3><span>&#8377;</span><%= final_price %></h3>
+                        <h3><span>&#8377;</span><%= pretty_print_price(Integer.toString(final_price)) %></h3>
                     </div>
                     <div class="quantity-btn">
                     <button formaction="./update_quantity_neg.jsp">-</button>
@@ -69,12 +69,12 @@
                 <div class="cart-price">
                     
                     <p>Price</p>
-                    <p><span>&#8377;</span><%= total_payable %></p>
+                    <p><span>&#8377;</span><%= pretty_print_price(Integer.toString(total_payable)) %></p>
                     <p>Delivery Charge</p>
                     <p class="green">FREE</p>
                     <hr>
                     <h4>Total Amount</h4>
-                    <h4><span>&#8377;</span><%= total_payable %></h4>
+                    <h4><span>&#8377;</span><%= pretty_print_price(Integer.toString(total_payable)) %></h4>
                 </div>
             </div>
         </form>

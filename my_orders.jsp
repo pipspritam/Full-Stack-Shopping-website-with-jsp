@@ -25,7 +25,7 @@
     <p><strong> Product Name:</strong> <%= rs.getString("product_name") %></p>
     <p><strong> Quantity:</strong> <%= rs.getString("quantity") %></p>
     <p><strong> Date:</strong> <%= rs.getString("buy_date") %></p>
-    <p><strong> Total Paid:</strong> <%= rs.getInt("total_payable") %></p> <hr>
+    <p><strong> Total Paid:</strong> <%= pretty_print_price(Integer.toString(rs.getInt("total_payable"))) %></p> <hr>
 <%
             }
         }catch(Exception e){}

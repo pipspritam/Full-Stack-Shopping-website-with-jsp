@@ -11,6 +11,8 @@
             numLen -= 3;
             pretty_price = price.substring(0, pos) + "," + price.substring(pos);
         }
+        else
+            return pretty_price;
         
         while(numLen > 2)
         {
@@ -26,7 +28,7 @@
 Connection con=null;
 try{
 Class.forName("oracle.jdbc.driver.OracleDriver"); 
-con=DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe","xe","Pritam@99");
+con=DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe","xe","xe");
 }catch(Exception e){
 out.println(e);
 }

@@ -87,9 +87,9 @@
                     </div>
                     <div class="product-details">
                         <h3><%= pname %></h3>
-                        <p>Price per item: <span>&#8377;</span><%= final_price %></p>
+                        <p>Price per item: <span>&#8377;</span><%= pretty_print_price(Integer.toString(final_price)) %></p>
                         <p>Quantity: <span><%= qty %></span></p>
-                        <p>Total Price: <span>&#8377;</span><%= qty*final_price %></p>
+                        <p>Total Price: <span>&#8377;</span><%= pretty_print_price(Integer.toString(qty*final_price)) %></p>
                     </div>
 
                 </div>
@@ -178,7 +178,7 @@
             </div>
       
             <div class="input-box procced-btn-div">
-                <input type="submit" value="Pay <%= payable %>">
+                <input type="submit" value="Pay <%= pretty_print_price(Integer.toString(payable)) %>">
             </div>
 
         </form>
