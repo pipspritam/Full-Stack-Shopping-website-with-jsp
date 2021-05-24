@@ -3,7 +3,17 @@
 <head>
     <%@ include file="dbconnect.jsp" %>
     <%@ include file="navbar.jsp" %>
-    
+    <%!
+        String add_bull_desc(String desc){
+            String[] desc_list = desc.split("\\|", -2);
+                String new_Desc = "&bull; " + desc_list[0];
+                for (int i = 1; i < desc_list.length; i++) {
+                    new_Desc += "<br>&bull; " + desc_list[i];
+                }
+
+             return new_Desc;
+        }
+    %>
     <title>Home Page</title>
     <link rel="stylesheet" href="./index.css">
 </head>
@@ -66,7 +76,7 @@
                     </div>
                 </div>
                 
-                <p class="description"><%= rs.getString(4) %></p>
+                <p class="description"><%= add_bull_desc(rs.getString(4)) %></p>
 
             </div>
         </div>
