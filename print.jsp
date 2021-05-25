@@ -22,7 +22,7 @@
 %>
 <html>
     <head>
-        <link rel="stylesheet" href="final_buy_now.css">
+        <link rel="stylesheet" href="bill.css">
     </head>
     <body onload="window.print()">
         <div class="container">

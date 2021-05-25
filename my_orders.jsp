@@ -28,6 +28,14 @@
     <p><strong> Total Paid:</strong> <%= pretty_print_price(Integer.toString(rs.getInt("total_payable"))) %></p> <hr>
 <%
             }
+            if(flag==false)
+            {
+                %>
+                <h1>No Order Yet</h1>
+                <p><a href="./index.jsp">Continue Shopping</a></p>
+
+                <%
+            }
         }catch(Exception e){}
     }
 %>

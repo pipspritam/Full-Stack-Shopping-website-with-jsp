@@ -99,7 +99,7 @@
     cursor: pointer;
   }
   
-  /* Payment Page */
+  
   .delivery-address-div {
     display: grid;
     grid-template-columns: 1fr 2fr;
