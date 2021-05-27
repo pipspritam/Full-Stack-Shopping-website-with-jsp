@@ -14,6 +14,7 @@
         
         ResultSet rs=stmt.executeQuery("select product_name, price, discount,  item.quantity, cart.quantity,cart.product_id from item, cart where cart.product_id=item.product_id and cart.email='"+email+"'");
         boolean flag = false;
+        boolean out_of_stock = false;
         int total_payable = 0;
         
 %>
@@ -42,11 +43,22 @@
                         <h4><%= rs.getString(1) %></h4>
                         <h3><span>&#8377;</span><%= pretty_print_price(Integer.toString(final_price)) %></h3>
                     </div>
+                    <%
+                        if(rs.getInt(5) <= rs.getInt(4)){
+                    %>
                     <div class="quantity-btn">
                     <button formaction="./update_quantity_neg.jsp">-</button>
                     <input type="number"  value="<%= rs.getInt(5) %>" min="1" max="9">
                     <button formaction="./update_quantity.jsp">+</button>
-                </div>
+                    </div>
+                    <%
+                    } else {
+                        out_of_stock = true;
+                    %>
+                    <p>OUT OF STOCK</p>
+                    <%
+                    }
+                    %>
                     <button class="button" formaction="./remove_from_cart.jsp">REMOVE</button>
                 
                 </div>
@@ -60,8 +72,17 @@
         if(flag){
 %>           
                 <div class="order-div">
-                    
+                <%
+                    if(!out_of_stock){
+                %>
                     <input type="submit" value="PLACE ORDER">
+                <%
+                    } else {
+                %>
+                    <p>Cannot place order</p>
+                <%
+                    }
+                %>
                 </div>
             </div>
             <div class="price-details-div">
