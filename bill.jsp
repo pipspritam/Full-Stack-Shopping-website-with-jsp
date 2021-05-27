@@ -110,6 +110,27 @@
                 </div>
             </div>
         </div>
+        <form class="print" action="./print.jsp" method="POST" target="_blank">
+            <input type="hidden" name="name" value="<%= rs.getString("name") %>">
+            <input type="hidden" name="email" value="<%= rs.getString("email") %>">
+            <input type="hidden" name="phone" value="<%= rs.getString("phone") %>">
+            <input type="hidden" name="address" value="<%= rs.getString("address") %>">
+            <input type="hidden" name="pincode" value="<%= rs.getString("pincode") %>">
+            <input type="hidden" name="del_name" value="<%= del_name %>">
+            <input type="hidden" name="del_email" value="<%= del_email %>">
+            <input type="hidden" name="del_phone" value="<%= del_phone %>">
+            <input type="hidden" name="new_address" value="<%= new_address %>">
+            <input type="hidden" name="del_pincode" value="<%= del_pincode %>">
+            <input type="hidden" name="order_id" value="<%= order_id %>">
+            <input type="hidden" name="buy_time" value="<%= buy_time %>">
+            <input type="hidden" name="buy_date" value="<%= buy_date %>">
+            <input type="hidden" name="pname" value="<%= pname %>">
+            <input type="hidden" name="price" value="<%= final_price %>">
+            <input type="hidden" name="quantity" value="<%= quantity %>">
+            <input type="hidden" name="payable" value="<%= payable %>">
+            <input type="hidden" name="payment_option" value="<%= payment_option %>">
+            <input class="print-btn" type="submit" value="Print Bill">
+        </form>
         <div class="msg-div">
             <h1>Thank You For Shopping With Us</h1>
             <a class="continue-btn" href="./index.jsp">Continue Shopping</a>
@@ -119,27 +140,8 @@
         String sql1 = "insert into orders values ('" + order_id + "', '" + buy_date + "', '" + email + "', '" + pid + "', " + quantity + ", " + payable + ", '" + del_name + "', '" + del_phone + "', '" + new_address + "', '" + del_pincode + "', '" + pname + "')";
         int i1=stmt3.executeUpdate(sql1);
     %>
+    
     </div>
-    <form action="./print.jsp" method="POST" target="_blank">
-        <input type="hidden" name="name" value="<%= rs.getString("name") %>">
-        <input type="hidden" name="email" value="<%= rs.getString("email") %>">
-        <input type="hidden" name="phone" value="<%= rs.getString("phone") %>">
-        <input type="hidden" name="address" value="<%= rs.getString("address") %>">
-        <input type="hidden" name="pincode" value="<%= rs.getString("pincode") %>">
-        <input type="hidden" name="del_name" value="<%= del_name %>">
-        <input type="hidden" name="del_email" value="<%= del_email %>">
-        <input type="hidden" name="del_phone" value="<%= del_phone %>">
-        <input type="hidden" name="new_address" value="<%= new_address %>">
-        <input type="hidden" name="del_pincode" value="<%= del_pincode %>">
-        <input type="hidden" name="order_id" value="<%= order_id %>">
-        <input type="hidden" name="buy_time" value="<%= buy_time %>">
-        <input type="hidden" name="buy_date" value="<%= buy_date %>">
-        <input type="hidden" name="pname" value="<%= pname %>">
-        <input type="hidden" name="price" value="<%= final_price %>">
-        <input type="hidden" name="quantity" value="<%= quantity %>">
-        <input type="hidden" name="payable" value="<%= payable %>">
-        <input type="hidden" name="payment_option" value="<%= payment_option %>">
-        <input type="submit" value="Print Bill">
-    </form>
+    
 </body>
 </html>
