@@ -1,24 +1,13 @@
 <%@ include file="dbconnect.jsp" %>
-
 <%
-    String name = request.getParameter("name");
-    String email = request.getParameter("email");
-    String phone = request.getParameter("phone");
-    String address = request.getParameter("address");
-    String pincode = request.getParameter("pincode");
-    String del_name = request.getParameter("del_name");
-    String del_email = request.getParameter("del_email");
-    String del_phone = request.getParameter("del_phone");
-    String del_pincode = request.getParameter("del_pincode");
-    String new_address = request.getParameter("new_address");
+    String email = (String)session.getAttribute("email");
     String order_id = request.getParameter("order_id");
-    String buy_date = request.getParameter("buy_date");
-    String buy_time = request.getParameter("buy_time");
-    String pname = request.getParameter("pname");
-    String quantity = request.getParameter("quantity");
-    String price = request.getParameter("price");
-    String payable = request.getParameter("payable");
-    String payment_option = request.getParameter("payment_option");
+    Statement stmt = con.createStatement();
+    ResultSet rs=stmt.executeQuery("select * from users where email='"+email+"'");
+    Statement stmt1 = con.createStatement();
+    ResultSet rs1=stmt1.executeQuery("select * from orders where order_id='" + order_id + "'");
+    rs.next();
+    rs1.next();
 %>
 <html>
     <head>
@@ -27,34 +16,35 @@
     <body onload="window.print()">
         <div class="container">
             <div class="col-2">
+    
                 <div class="bill-ship order-div">
                     <h1>Bill To</h1>
                     <div class="delivery-address-div">
                         <p class="label">Name </p>
-                        <p><%= name %></p>
+                        <p><%= rs.getString("name") %></p>
                         <p class="label">Email </p>
-                        <p><%= email %></p>
+                        <p><%= rs.getString("email") %></p>
                         <p class="label">Phone </p>
-                        <p><%= phone %></p>
+                        <p><%= rs.getString("phone") %></p>
                         <p class="label">Address</p>
-                        <p><%= address %></p>
+                        <p><%= rs.getString("address") %></p>
                         <p class="label">Pincode</p>
-                        <p><%= pincode %></p>
+                        <p><%= rs.getString("pincode") %></p>
                     </div>
                 </div>
                 <div class="bill-ship order-div">
                     <h1>Ship To</h1>
                     <div class="delivery-address-div">
                         <p class="label">Name </p>
-                        <p><%= del_name%></p>
+                        <p><%= rs1.getString("shipping_name") %></p>
                         <p class="label">Email </p>
-                        <p><%= del_email %></p>
+                        <p><%= rs1.getString("shipping_email") %></p>
                         <p class="label">Phone </p>
-                        <p><%= del_phone %></p>
+                        <p><%= rs1.getString("shipping_phone") %></p>
                         <p class="label">Address</p>
-                        <p><%= new_address %></p>
+                        <p><%= rs1.getString("shipping_address") %></p>
                         <p class="label">Pincode</p>
-                        <p><%= del_pincode%></p>
+                        <p><%= rs1.getString("shipping_pincode")%></p>
                     </div>
                 </div>
             </div>
@@ -65,9 +55,9 @@
                         <p class="label">Order Id</p>
                         <p><%= order_id %></p>
                         <p class="label">Date </p>
-                        <p><%= buy_date %></p>
+                        <p><%= rs1.getString("buy_date") %></p>
                         <p class="label">Time </p>
-                        <p><%= buy_time %></p>
+                        <p><%= rs1.getString("buy_time") %></p>
     
                     </div>
                 </div>
@@ -75,11 +65,11 @@
                     <h1>Order Details</h1>
                     <div class="product-details-div">
                         <div class="product-details">
-                            <h3><%= pname %></h3>
-                            <p>Price: <span>&#8377;</span><%= pretty_print_price(price) %></p>
-                            <p>Quantity: <span><%= quantity %></span></p>
-                            <p>Payable: <span><%= pretty_print_price(payable) %></span></p>
-                            <p>Payment Method: <span><%= payment_option %></span></p>
+                            <h3><%= rs1.getString("product_name") %></h3>
+                            <p>Price: <span>&#8377;</span><%= pretty_print_price(rs1.getString("price")) %></p>
+                            <p>Quantity: <span><%= rs1.getString("quantity") %></span></p>
+                            <p>Payable: <span><%= pretty_print_price(rs1.getString("total_payable")) %></span></p>
+                            <p>Payment Method: <span><%= rs1.getString("payment_method") %></span></p>
                         </div>
                     </div>
                 </div>
