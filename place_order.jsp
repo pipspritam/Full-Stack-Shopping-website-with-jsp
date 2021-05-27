@@ -100,8 +100,8 @@
                 </tr>
             </table>
         </form>
-        <%
-            } catch(Exception e){out.print("Exception");}
+        <%    
+    } catch(Exception e){out.print("Exception");}
         %>
     </body>
 </html>
