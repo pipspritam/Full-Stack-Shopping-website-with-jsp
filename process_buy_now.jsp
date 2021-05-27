@@ -111,7 +111,7 @@
                 </div>
             </div>
         </div>
-        <form action="./bill.jsp" method="POST" class="payment-div order-div" onsubmit="return card_details_validate()">
+        <form action="./process_bill.jsp" method="POST" class="payment-div order-div" onsubmit="return card_details_validate()">
             <input type="hidden" name="payable" value="<%= payable %>">
             <input type="hidden" name="address" value="<%= addr %>">
             <input type="hidden" name="ID" value="<%= id %>">

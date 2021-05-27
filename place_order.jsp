@@ -74,6 +74,10 @@
                     <td><input type="text" name="del_name" id="del_name" value="<%= rs1.getString("NAME")%>"></td>
                 </tr>
                 <tr>
+                    <td>Email: </td>
+                    <td><input type="text" name="del_email" id="del_email" value="<%= rs1.getString("email")%>"></td>
+                </tr>
+                <tr>
                     <td>Phone: </td>
                     <td><input type="text" name="del_phone" id="del_phone" value="<%= rs1.getString("PHONE")%>"></td>
                 </tr>
