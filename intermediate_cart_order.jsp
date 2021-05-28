@@ -11,6 +11,9 @@
 %>
 <%
     String email = (String)session.getAttribute("email");
+    Statement deletStmt = con.createStatement();
+    String sql4 = "delete from temp_order where email = '" + email + "'";
+    int i5 = deletStmt.executeUpdate(sql4);
     String del_name = request.getParameter("del_name");
     String del_email = request.getParameter("del_email");
     String del_phone = request.getParameter("del_phone");
@@ -31,13 +34,14 @@
             String sql1 = "insert into orders values ('" + order_id + "', '" + buy_date + "', '" + email + "', '" + rs.getString(6) + "', " + rs.getString(5) + ", " + total_payable + ", '" + del_name + "', '" + del_phone + "', '" + del_address + "', '" + del_pincode + "', '" + rs.getString(1) + "', '" + payment_option + "', '" + buy_time + "', '" + del_email + "', " + final_price + ")";
             int i1=stmt3.executeUpdate(sql1);
             Statement stmt4 = con.createStatement();
-            int i2 = stmt4.executeUpdate("insert into temp_order values('" + order_id + "')");
+            int i2 = stmt4.executeUpdate("insert into temp_order values('" + order_id + "', '" + email + "')");
             Statement stmt5 = con.createStatement();
             String sql2 = "update item set quantity=quantity-"+rs.getString(5)+" where product_id='" + rs.getString(6) + "'";
             int i3 = stmt5.executeUpdate(sql2);
             Statement stmt6 = con.createStatement();
             String sql3 = "delete from cart where email = '" + email + "'";
             int i4 = stmt6.executeUpdate(sql3);
+            response.sendRedirect("cart_bill.jsp");
         }
 %>
 <%
