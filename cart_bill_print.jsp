@@ -22,7 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TAX INVOICE</title>
-    <link rel="stylesheet" href="./bill.css">
+    <link rel="stylesheet" href="./css/bill.css">
 </head>
 
 <body onload="window.print()">

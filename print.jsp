@@ -11,7 +11,7 @@
 %>
 <html>
     <head>
-        <link rel="stylesheet" href="bill.css">
+        <link rel="stylesheet" href="./css/bill.css">
     </head>
     <body onload="window.print()">
         <div class="container">

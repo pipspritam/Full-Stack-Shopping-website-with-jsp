@@ -4,7 +4,7 @@
     <%@ include file="dbconnect.jsp" %>
     <%@ include file="navbar.jsp" %>
     <title>CART</title>
-    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="./css/cart.css">
 </head>
 <body>
     <%
@@ -85,6 +85,9 @@
                 %>
                 </div>
             </div>
+            <%
+                    if(!out_of_stock){
+            %>
             <div class="price-details-div">
                 <h2>PRICE DETAILS</h2>
                 <div class="cart-price">
@@ -98,6 +101,9 @@
                     <h4><span>&#8377;</span><%= pretty_print_price(Integer.toString(total_payable)) %></h4>
                 </div>
             </div>
+            <%
+                    } 
+                %>
         </form>
         </div>
         

@@ -4,7 +4,7 @@
     <%@ include file="navbar.jsp" %>
     <%@ include file="dbconnect.jsp" %>
     <title>Buy Now</title>
-    <link rel="stylesheet" href="buy_now.css">
+    <link rel="stylesheet" href="./css/buy_now.css">
     <script type="text/javascript">
         function validate()
         {

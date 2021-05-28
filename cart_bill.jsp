@@ -23,7 +23,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TAX INVOICE</title>
-    <link rel="stylesheet" href="./bill.css">
+    <link rel="stylesheet" href="./css/cart_bill.css">
 </head>
 
 <body>
@@ -91,12 +91,14 @@
     <%
         }
     %>
-    <form class="print" action="./cart_bill_print.jsp" method="POST" target="_blank">
-        <input class="print-btn" type="submit" value="Print Bill">
-    </form>
-    <div class="msg-div">
-        <h1>Thank You For Shopping With Us</h1>
-        <a class="continue-btn" href="./index.jsp">Continue Shopping</a>
+    <div class="container2">
+        <form class="print" action="./cart_bill_print.jsp" method="POST" target="_blank">
+            <input class="print-btn" type="submit" value="Print Bill">
+        </form>
+        <div class="msg-div">
+            <h1>Thank You For Shopping With Us</h1>
+            <a class="continue-btn" href="./index.jsp">Continue Shopping</a>
+        </div>
     </div>
     
 </body>

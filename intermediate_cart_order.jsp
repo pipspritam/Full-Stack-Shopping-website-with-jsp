@@ -41,8 +41,9 @@
             Statement stmt6 = con.createStatement();
             String sql3 = "delete from cart where email = '" + email + "'";
             int i4 = stmt6.executeUpdate(sql3);
-            response.sendRedirect("cart_bill.jsp");
+            
         }
+        response.sendRedirect("cart_bill.jsp");
 %>
 <%
     } catch (Exception e){out.print("EXc");}
