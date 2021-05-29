@@ -44,6 +44,10 @@
                     <Input type="Hidden" name="ID" value="<%= rs.getString(1) %>"> 
                     <Input type="submit" value ="Update Product">
                 </form>
+                <form method="post" id="myForm2" action="./process_delete_item.jsp">
+                    <Input type="Hidden" name="ID" value="<%= rs.getString(1) %>"> 
+                    <Input type="submit" value ="Delete Product">
+                </form>
                 <hr>
             </div>
         <%
