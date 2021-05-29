@@ -3,28 +3,6 @@
 		<html>
 		<head>
 			<title>Process Login</title>
-			<style>
-				.container{
-					text-align: center;
-					padding: 20px;
-					color: white;
-				}
-
-				.container h1{
-					color: white;
-				}
-
-				.container a{
-            text-decoration: none;
-            color: white;
-            padding: 0;
-            border-bottom: 2px solid white;
-        }
-
-        .container a:hover{
-            border-bottom: 2px transparent;
-        }
-			</style>
 		</head>
 
 		<body>
@@ -32,11 +10,10 @@
 			<% 
 				String email=request.getParameter("email"); 
 				String pass=request.getParameter("pass"); 
-				boolean res=true;
+				boolean res=false;
 				try { 
 					
 					Statement stmt=con.createStatement(); 
-				
 					ResultSet rs=stmt.executeQuery("select * from admin where email='" + email + "'"); 
 		
 					res = rs.next();
@@ -60,7 +37,7 @@
 						con.close(); 
 					}
 				     catch (Exception e) { 
-							
+							out.print("exc");
 						}
 					 %>
 

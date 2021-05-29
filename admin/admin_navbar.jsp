@@ -92,7 +92,6 @@
                 %>
                 <li><a href="./admin_login.jsp">Add Item</a></li>
                 <li><a href="./admin_login.jsp">Update Item</a></li>
-                <li><a href="./admin_login.jsp">Delete Item</a></li>
                 <a href="./admin_login.jsp"><button>Log in</button></a>
                 <%
 
@@ -102,7 +101,6 @@
 
                 <li><a href="./add_item.jsp">Add Item</a></li>
                 <li><a href="./update_item.jsp">Update Item</a></li>
-                <li><a href="./delete_item.jsp">Delete Item</a></li>
                 <a href="./admin_logout.jsp"><button>Log out</button></a>
                 <%
             }
