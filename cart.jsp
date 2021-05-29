@@ -10,6 +10,15 @@
     <%
     try{
         String email = (String)session.getAttribute("email");
+        if(email==null){
+            %>
+                <h3>Missing Cart items?</h3>
+                <h4>Login to see the items you added previously</h4>
+                <a href="./login.jsp">Login Now</a>
+
+            <%
+        }
+        else {
         Statement stmt=con.createStatement();
         
         ResultSet rs=stmt.executeQuery("select product_name, price, discount,  item.quantity, cart.quantity,cart.product_id from item, cart where cart.product_id=item.product_id and cart.email='"+email+"'");
@@ -116,6 +125,7 @@
 
     <%
 }
+        }
     con.close();
     
     } catch (Exception e){
