@@ -16,8 +16,27 @@
     %>
     <title>Home Page</title>
     <link rel="stylesheet" href="./css/index.css">
+    <script>
+        function myFunc(){
+            document.getElementById("message").style.display = "none";
+            document.getElementById("message").style.content = "";
+            return false;
+        }
+    </script>
 </head>
-<body>
+<body onload="setTimeout(myFunc, 2000)">
+    <%
+        String message = null;
+        if((Integer)session.getAttribute("hasMessage") == 1)
+            {message = null;}
+        else
+           { message = request.getParameter("message");}
+        if(message!=null){
+    %>
+    <p id="message"><%= message %></p>
+    <%
+    session.setAttribute("hasMessage", 1);}
+    %>
     <div class="container">
         <%
         try {
