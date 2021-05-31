@@ -1,6 +1,8 @@
 <%@ include file="dbconnect.jsp" %>
 <%
     try{
+        Statement stmt1 = con.createStatement();
+        int i2=stmt1.executeUpdate("insert into message_table values ('item added to cart')");
         String pid = request.getParameter("ID");
         String email = (String)session.getAttribute("email");
         Statement stmt=con.createStatement();
