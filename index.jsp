@@ -26,13 +26,15 @@
 </head>
 <body onload="setTimeout(myFunc, 2000)">
     <%
-        String message = null;
-        message = request.getParameter("message");
-        if(message!=null){
+        Statement stmt1=con.createStatement(); 
+        ResultSet rs1=stmt1.executeQuery("select * from message_table");
+        if(rs1.next()){
     %>
-    <p id="message"><%= message %></p>
+    <p id="message"><%= rs1.getString(1) %></p>
     <%
-    }
+    Statement stmt2 = con.createStatement();
+    int i2=stmt1.executeUpdate("delete from message_table");
+        }
     %>
     <div class="container">
         <%
