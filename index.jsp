@@ -27,15 +27,12 @@
 <body onload="setTimeout(myFunc, 2000)">
     <%
         String message = null;
-        if((Integer)session.getAttribute("hasMessage") == 1)
-            {message = null;}
-        else
-           { message = request.getParameter("message");}
+        message = request.getParameter("message");
         if(message!=null){
     %>
     <p id="message"><%= message %></p>
     <%
-    session.setAttribute("hasMessage", 1);}
+    }
     %>
     <div class="container">
         <%

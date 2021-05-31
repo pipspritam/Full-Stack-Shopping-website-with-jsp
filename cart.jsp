@@ -12,10 +12,13 @@
         String email = (String)session.getAttribute("email");
         if(email==null){
             %>
+            <div class="w-login">
+
                 <h3>Missing Cart items?</h3>
                 <h4>Login to see the items you added previously</h4>
-                <a href="./login.jsp">Login Now</a>
-
+                <a  href="./login.jsp">Login Now</a>
+            </div>
+                
             <%
         }
         else {
@@ -120,8 +123,14 @@
     <%
 }if(flag == false){
     %>
-    <p>Oops your cart is empty!</p>
-    <p>Continue shopping <a href="./index.jsp">Shop Now</a></p>
+
+
+    <div class="empty-cart">
+        <img src="./image/emptycart.png" alt="empty cart">
+        <p>Oops your cart is empty!</p>
+        <a href="./index.jsp">Continue shopping</a>
+    </div>
+    
 
     <%
 }

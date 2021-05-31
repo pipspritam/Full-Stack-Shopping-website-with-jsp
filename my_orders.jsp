@@ -57,7 +57,7 @@
             {
                 %>
                 <div class="msg-div">
-                    <h1>No Order Yet</h1>
+                    <h3>No Order Yet</h3>
                 <a class="continue-btn" href="./index.jsp">Continue Shopping</a>
 
                 </div>

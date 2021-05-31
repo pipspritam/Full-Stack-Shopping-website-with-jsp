@@ -8,19 +8,20 @@
     <body>
         
         <div>
-            <center><h1>Account Details</h1></center>
+            <center><h1>Update Account Details</h1></center>
             <% 
             Statement stmt=con.createStatement();
             String email=(String)session.getAttribute("email");
             ResultSet rs=stmt.executeQuery("select * from users where email='"+email+ "'");
             if(rs.next())
             {
-                %> <form action="logout.jsp" method="POST">
+                %> <form action="update_account.jsp" method="POST">
                     <div >
                         <table >
                             <tr>
                                 <td>Name: </td>
-                                <td><%=rs.getString("name")%></td>
+                                
+                                <td><input type="text" name="name" value="<%=rs.getString("name")%>"></td>
                             </tr>
                             <tr>
                                 <td>Email: </td>
@@ -28,22 +29,28 @@
                             </tr>
                             <tr>
                                 <td>Phone: </td>
-                                <td><%=rs.getString("phone")%></td>
+                                <td><input type="text" name="phone" value="<%=rs.getString("phone")%>"></td>
                             </tr>
                             <tr>
                                 <td>Address: </td>
-                                <td><Address><%=rs.getString("address")%></Address></td>
+                                <td><input type="text" name="address" value="<%=rs.getString("address")%>"></td>
                             </tr>
                             <tr>
                                 <td>Pincode: </td>
-                                <td><%=rs.getString("pincode")%></td>
+                                <td><input type="text" name="pincode" value="<%=rs.getString("pincode")%>"></td>
+                            </tr>
+                            <tr>
+                                <td>Password: </td>
+                                <td><input type="password" name="password" value="<%=rs.getString("password")%>"></td>
+                            </tr>
+                            <tr>
+                                <td>Conform Password: </td>
+                                <td><input type="password" name="conformpassword" value="<%=rs.getString("password")%>"></td>
                             </tr>
                             
+                            
                             <tr>
-                                <td></td><td><a href="edit_account.jsp">Edit account</a></td>
-                            </tr>
-                            <tr>
-                                <td></td><td><input type="Submit" value="Logout"></td>
+                                <td></td><td><input type="Submit" value="Update"></td>
                             </tr>
                             
                         </table>
