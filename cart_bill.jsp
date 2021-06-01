@@ -4,7 +4,7 @@
 
     String email = (String)session.getAttribute("email");
     Statement tempStmt = con.createStatement();
-    ResultSet temptable = tempStmt.executeQuery("select * from temp_order");
+    ResultSet temptable = tempStmt.executeQuery("select * from temp_order where email='"+email+"'");
     while(temptable.next()){
         String order_id = temptable.getString(1);
         Statement stmt = con.createStatement();

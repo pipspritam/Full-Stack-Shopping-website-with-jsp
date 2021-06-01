@@ -42,9 +42,7 @@
                             <tr>
                                 <td></td><td><a href="edit_account.jsp">Edit account</a></td>
                             </tr>
-                            <tr>
-                                <td></td><td><input type="Submit" value="Logout"></td>
-                            </tr>
+                            
                             
                         </table>
                     </div>

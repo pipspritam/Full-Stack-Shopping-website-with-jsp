@@ -1,104 +1,55 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #ffffff;
-            color: black;
-            
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .navbar {
-            font-family: 'Poppins', sans-serif;
-            padding: 10px 5%;
-            color: white;
-            background-color: #181c20;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        .navbar h1{
-            margin-right: auto;
-        }
-        .navbar h1 a{
-            text-decoration: none;
-            color: white;
-            transition: 300ms;
-        }
-        .navbar h1 a:hover{
-            
-            color: #2ecc71;
-        }
-
-        .navbar ul {
-            list-style: none;
-            
-        }
-
-        .navbar ul li {
-            display: inline-block;
-            text-decoration: none;
-            padding: 0 20px;
-            font-size: 18px;
-        }
-
-        .navbar ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .navbar button {
-            background: none;
-            padding: 10px 20px;
-            margin-left: 30px;
-          
-            color: white;
-            border: 2px solid #2ecc71;
-            border-radius: 20px;
-            transition: .3s;
-            font-weight: bold;
-        }
-
-        .navbar button a {
-            text-decoration: none;
-            color: white;
-        }
-
-        .navbar button:hover {
-            background-color: #2ecc71;
-            
-        }
-    </style>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="navbar.css">
+    <title>Document</title>
 </head>
 
 <body>
     <nav class="navbar">
-        <h1><a href="./index.jsp">LOGO</a></h1>
-        <ul>
-            <li><a href="#">Contact</a></li>
-            <li><a href="./cart.jsp">Cart</a></li>
-            <li><a href="./my_orders.jsp">My Orders</a></li>
-        </ul>
+        <a href="./index.jsp" class="logo"><i class="fab fa-pied-piper-alt"></i>
+            <h2>Pied Piper</h2>
+        </a>
+        <div class="search">
+            <input type="search">
+            <button><i class="fas fa-search"></i></button>
+        </div>
         <%
-            if(((String)session.getAttribute("email"))==null){
+            if(((String)session.getAttribute("email"))!=null){
         %>
-        <a href="./login.jsp"><button>Login</button></a>
+        <ul class="menu">
+            <li><a href="./cart.jsp">Cart</a></li>
+            <li>
+                <a href=""><%= (String)session.getAttribute("name") %></a>
+                <ul class="submenu">
+                    <li><a href="account.jsp">My Profile</a></li>
+                    <li><a href="./my_orders.jsp">Orders</a></li>
+                    <li><a href="">Wishlist</a></li>
+                    <li><a href="./logout.jsp">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
         <%
         } else {
         %>
-        <a href="account.jsp"><button><%= (String)session.getAttribute("name") %></button></a>
+        <ul class="menu">
+            <li><a href="./cart.jsp">Cart</a></li>
+            <li>
+                <a href="./login.jsp">Login</a>
+                
+            </li>
+        </ul>
+
+
         <% } %>
+
     </nav>
+
+
 </body>
 
 </html>
