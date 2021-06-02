@@ -1,2 +1,2 @@
-# shopping_website_with_jsp
+# shopping website with jsp
 # developer Pritam Mondal and Ayush Nandi 
