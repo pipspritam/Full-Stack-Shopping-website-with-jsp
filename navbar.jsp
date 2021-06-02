@@ -6,7 +6,6 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="navbar.css">
-    <title>Document</title>
 </head>
 
 <body>
@@ -14,10 +13,10 @@
         <a href="./index.jsp" class="logo"><i class="fab fa-pied-piper-alt"></i>
             <h2>Pied Piper</h2>
         </a>
-        <div class="search">
-            <input type="search">
-            <button><i class="fas fa-search"></i></button>
-        </div>
+        <form class="search" action="./search.jsp" method="post">
+                <input type="search" name="search">
+                <button><i class="fas fa-search"></i></button>
+        </form>
         <%
             if(((String)session.getAttribute("email"))!=null){
         %>
