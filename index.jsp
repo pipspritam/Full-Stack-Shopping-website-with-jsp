@@ -37,12 +37,12 @@
         }
     %>
     <ul class="header-links">
-        <li><a href="">Electronics</a></li>
-        <li><a href="">Appliances</a></li>
-        <li><a href="">Men</a></li>
-        <li><a href="">Woman</a></li>
-        <li><a href="">Sports</a></li>
-        <li><a href="">Books</a></li>
+        <li><a href="./category.jsp?cat=Electronics">Electronics</a></li>
+        <li><a href="./category.jsp?cat=Appliances">Appliances</a></li>
+        <li><a href="./category.jsp?cat=Men">Men</a></li>
+        <li><a href="./category.jsp?cat=Woman">Woman</a></li>
+        <li><a href="./category.jsp?cat=Sports">Sports</a></li>
+        <li><a href="./category.jsp?cat=Books">Books</a></li>
     </ul>
     <div class="container">
         <%
@@ -66,7 +66,8 @@
                 
 
                 <img src="<%= img_path+imgName %>" alt="./image/product-1.jpg" onerror="this.onerror=null; this.src='./image/default.jpg'">
-                <form action="" class="wishlist">
+                <form action="./add_wishlist.jsp" class="wishlist">
+                    <input type="hidden" name="pid" value="<%= rs.getString(1) %>">
                     <button><i class="fas fa-heart"></i></button>
                 </form>
                 <%

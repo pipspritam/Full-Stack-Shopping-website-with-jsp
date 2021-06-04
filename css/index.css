@@ -63,6 +63,10 @@
     object-position: center;
     object-fit: contain;
 }
+
+.product-img{
+    position: relative;
+}
 .product-form{
     width: 90%;
     display: grid;
@@ -130,8 +134,8 @@
 }
 .wishlist {
     position: absolute;
-    top: 40px;
-    right: 55px;
+    top: 30px;
+    right: 15px;
     display: flex;
     justify-content: flex-end;
   }
