@@ -21,14 +21,14 @@
             pretty_price = pretty_price.substring(0, pos) + "," + pretty_price.substring(pos);
         }
 
-        return pretty_price;
+        return pretty_price; 
     }
 %>
 <%
 Connection con=null;
 try{
 Class.forName("oracle.jdbc.driver.OracleDriver"); 
-con=DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe","xe","Pritam@99");
+con=DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe","xe","xe");
 }catch(Exception e){
 out.println(e);
 }

@@ -27,7 +27,7 @@
                 <ul class="submenu">
                     <li><a href="account.jsp">My Profile</a></li>
                     <li><a href="./my_orders.jsp">Orders</a></li>
-                    <li><a href="">Wishlist</a></li>
+                    <li><a href="./wishlist.jsp">Wishlist</a></li>
                     <li><a href="./logout.jsp">Logout</a></li>
                 </ul>
             </li>

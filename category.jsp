@@ -39,9 +39,9 @@
     <div class="container">
         <%
         try {
-        String search = request.getParameter("search");
+        String cat = request.getParameter("cat");
         Statement stmt=con.createStatement(); 
-        ResultSet rs=stmt.executeQuery("select * from item where upper(product_name) like upper('%"+search+"%') or upper(category) like upper('%"+search+"%') or upper(company) like upper('%"+search+"%')");
+        ResultSet rs=stmt.executeQuery("select * from item where upper(category) like upper('%"+cat+"%')");
         boolean flag = false;
         
         %>
