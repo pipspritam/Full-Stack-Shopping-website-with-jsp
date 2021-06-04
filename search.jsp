@@ -104,9 +104,9 @@
         <% }
         if(!flag){
         %>
-        <p>NO ITEMS FOUND!</p>
+        <p class="nrf">NO ITEMS FOUND!</p>
         <%
-        } con.close(); 
+        } con.close();
     } 
     catch (Exception e) { 
     } %>

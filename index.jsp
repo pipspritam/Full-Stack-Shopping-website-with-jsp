@@ -36,6 +36,14 @@
     int i2=stmt1.executeUpdate("delete from message_table");
         }
     %>
+    <ul class="header-links">
+        <li><a href="">Electronics</a></li>
+        <li><a href="">Appliances</a></li>
+        <li><a href="">Men</a></li>
+        <li><a href="">Woman</a></li>
+        <li><a href="">Sports</a></li>
+        <li><a href="">Books</a></li>
+    </ul>
     <div class="container">
         <%
         try {
@@ -55,8 +63,12 @@
         
         <div class="product">
             <div class="product-img">
+                
 
                 <img src="<%= img_path+imgName %>" alt="./image/product-1.jpg" onerror="this.onerror=null; this.src='./image/default.jpg'">
+                <form action="" class="wishlist">
+                    <button><i class="fas fa-heart"></i></button>
+                </form>
                 <%
                     if(rs.getInt(5) > 0){
                         if(((String)session.getAttribute("email"))!=null){

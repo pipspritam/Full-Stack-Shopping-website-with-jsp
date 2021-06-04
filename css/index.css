@@ -8,8 +8,32 @@
     font-family: 'Roboto', sans-serif;
     width: min(90%, 70rem);
     margin: 0 5.5% 0 auto;
+    min-height: 60vh;
     
 }
+.header-links {
+    width: 100%;
+    list-style: none;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 1px 2px 10px -3px rgb(0 0 0 / 30%);
+    
+  }
+  .header-links li {
+    padding: 5px 10px;
+  }
+  .header-links li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .header-links li a:hover {
+    color: #2874f0;
+  }
 #message {
     background-color: rgb(95, 156, 95);
     display: inline-block;
@@ -94,3 +118,31 @@
     font-size: 1.2em;
     font-weight: 500;
 }
+.nrf {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    font-size: 40px;
+    padding-top: 70px;
+    font-style: bold;
+    font-weight: 700;
+    color: red;
+}
+.wishlist {
+    position: absolute;
+    top: 40px;
+    right: 55px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .wishlist button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #d3d3d3;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .wishlist button:focus {
+    color: red;
+  }
