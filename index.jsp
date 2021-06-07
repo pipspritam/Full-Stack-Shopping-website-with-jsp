@@ -51,9 +51,6 @@
         Statement stmt=con.createStatement(); 
         ResultSet rs=stmt.executeQuery("select * from item");
         
-        %>
-            
-        <%
             while(rs.next())
             {
                 int discountPrice = (rs.getInt(3)*(100 - rs.getInt(6)))/100;
@@ -63,17 +60,24 @@
         
         <div class="product">
             <div class="product-img">
-                
-
                 <img src="<%= img_path+imgName %>" alt="./image/product-1.jpg" onerror="this.onerror=null; this.src='./image/default.jpg'">
-                <form action="./add_wishlist.jsp" class="wishlist">
-                    <input type="hidden" name="pid" value="<%= rs.getString(1) %>">
-                    <button><i class="fas fa-heart"></i></button>
-                </form>
                 <%
+                    if(((String)session.getAttribute("email"))!=null){
+                %>
+                        <form action="./add_wishlist.jsp" class="wishlist">
+                            <input type="hidden" name="pid" value="<%= rs.getString(1) %>">
+                            <button><i class="fas fa-heart"></i></button>
+                        </form>
+                <% 
+                } else {
+                    %>
+                    <form action="./login.jsp" class="wishlist">
+                        <button><i class="fas fa-heart"></i></button>
+                    </form>
+                <% 
+                }
                     if(rs.getInt(5) > 0){
-                        if(((String)session.getAttribute("email"))!=null){
-                        
+                        if(((String)session.getAttribute("email"))!=null){    
                 %>
                 <div class="product-form">
                     <form  method="post"  action="./buy_now.jsp">

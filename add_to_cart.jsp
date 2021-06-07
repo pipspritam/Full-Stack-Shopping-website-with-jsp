@@ -14,7 +14,6 @@
         else{
             int i=stmt.executeUpdate("insert into cart values ('"+pid+"','"+email+"', 1)");
         }
-        
         response.sendRedirect("index.jsp?message="+"Item added to cart");
     } catch (Exception e){
     }

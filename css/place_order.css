@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  img {
+    max-width: 100%;
+  }
+  .container {
+    width: min(90%, 70rem);
+    margin: 30px auto;
+  }
+  .container > h1 {
+    text-align: center;
+    margin: 20px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+  }
+  .col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .box {
+    margin: 15px 0;
+    padding: 15px 30px;
+    box-shadow: 1px 2px 10px -3px rgb(0 0 0 / 56%);
+    border-radius: 5px;
+  }
+  .box h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .product {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid lightgray;
+  }
+  .product:last-child {
+    border: none;
+  }
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .total-price {
+    text-align: right;
+  }
+  
+  .address-div {
+    max-height: 540px;
+  }
+  .address-div .input-box {
+    width: 100%;
+  }
+  .address-div .input-box label {
+    display: block;
+    font-size: 17px;
+    padding-bottom: 5px;
+  }
+  .address-div input,
+  .address-div textarea {
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    border: 1px solid lightgrey;
+    padding: 10px;
+    position: relative;
+  }
+  .address-div textarea {
+    resize: none;
+  }
+  .address-div .input-box:nth-child(5) {
+    grid-column: span 2;
+  }
+  .procced-btn-div {
+    grid-column: span 2;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+  }
+  .procced-btn-div button {
+    border: none;
+    outline: none;
+    background-color: #fb641b;
+    color: white;
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
