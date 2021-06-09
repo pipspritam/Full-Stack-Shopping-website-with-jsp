@@ -14,72 +14,110 @@
         Statement stmt1=con.createStatement(); 
         ResultSet rs1=stmt1.executeQuery("select * from users where email = '" + email + "'");
         rs1.next();
-        while(rs.next()){
-            int final_price = (rs.getInt(2)*(100 - rs.getInt(3)))/100;
-            total_payable += (final_price * rs.getInt(5));
+        
 %>
-<html>
-    <head>
-        <script>
+<!DOCTYPE html>
+<html lang="en">
 
-            function show_card() {
-                document.getElementsByClassName("address-div")[0].style.display = "grid";
+<head>
+    <script>
+
+        function show_card() {
+            document.getElementsByClassName("address-div")[0].style.display = "grid";
+            return true;
+        }
+        function hide_card() {
+            document.getElementsByClassName("address-div")[0].style.display = "none";
+            return true;
+        }
+        function card_details_validate()
+        {
+            if(document.getElementById("COD").checked == true) {   
                 return true;
             }
-            function hide_card() {
-                document.getElementsByClassName("address-div")[0].style.display = "none";
+            else if(document.getElementById("Card").checked == true) {  
+                if(card_number.value.trim()=="")
+                {
+                    alert("Enter a valid card number");
+                    card_number.style.border = "solid 3px red";
+                    return false;
+                }
+                else if(card_holder_name.value.trim()=="")
+                {
+                    alert("Enter a valid card holder name");
+                    card_holder_name.style.border = "solid 3px red";
+                    return false;
+                }
+                else if(cvv.value.trim()=="")
+                {
+                    alert("Enter CVV");
+                    cvv.style.border = "solid 3px red";
+                    return false;
+                }
                 return true;
             }
-            function card_details_validate()
-            {
-                if(document.getElementById("COD").checked == true) {   
-                    return true;
-                }
-                else if(document.getElementById("Card").checked == true) {  
-                    if(card_number.value.trim()=="")
-                    {
-                        alert("Enter a valid card number");
-                        card_number.style.border = "solid 3px red";
-                        return false;
-                    }
-                    else if(card_holder_name.value.trim()=="")
-                    {
-                        alert("Enter a valid card holder name");
-                        card_holder_name.style.border = "solid 3px red";
-                        return false;
-                    }
-                    else if(card_holder_name.value.trim()=="")
-                    {
-                        alert("Enter a valid card holder name");
-                        card_holder_name.style.border = "solid 3px red";
-                        return false;
-                    }
-                    return true;
-                }
-                else {  
-                    alert("Select a patment method");
-                    return false; 
-                }
+            else {  
+                alert("Select a patment method");
+                return false; 
             }
-            
-        </script>
-    </head>
+        }
+        
+    </script>
+
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/process_cart_order.css">
+</head>
+
 <body>
-    <h1>Product Name: <%= rs.getString("product_name") %></h1>
-    <p>Price: <%= pretty_print_price(Integer.toString(final_price)) %></p>
-    <p>Quantity: <%= rs.getInt(5) %></p>
-    <%
+    <div class="container">
+        <div class="box">
+            <h1>Order Details</h1>
+            <%
+            while(rs.next()){
+                int final_price = (rs.getInt(2)*(100 - rs.getInt(3)))/100;
+                total_payable += (final_price * rs.getInt(5));
+                String imgName = rs.getString(6) + ".jpg";
+                String img_path = "./image/";
+
+
+            %>
+            <div class="product col-2">
+                <div class="product-img-div">
+                    <img src="<%= img_path+imgName %>" alt="./image/product-1.jpg" onerror="this.onerror=null; this.src='./image/default.jpg'">
+                </div>
+                <div class="product-details">
+                    <h3><%= rs.getString("product_name") %></h3>
+                    <p>Price: <span>&#8377;</span><%= pretty_print_price(Integer.toString(final_price)) %></p>
+                    <p>Quantity: <span><%= rs.getInt(5) %></span></p>
+                </div>
+
+            </div>
+            
+            <%
     }
     %>
-    <p>Total Payable: <strong><%= pretty_print_price(Integer.toString(total_payable)) %></strong></p>
-    <p>Delivery Name: <%= del_name %></p>
-    <p>Delivery Email: <%= del_email %></p>
-    <p>Delivery Phone: <%= del_phone %></p>
-    <p>Delivery Address: <%= del_address %></p>
-    <p>Delivery Pincode: <%= del_pincode %></p>
-    <h1>Choose Payment Option</h1>
+            
+
+        </div>
+
+        <div class="box">
+            <h1>Delivery Details</h1>
+            <div class="delivery-address-div col-2">
+                <p class="label">Name </p>
+                <p><%= del_name %></p>
+                <p class="label">Email </p>
+                <p><%= del_email %></p>
+                <p class="label">Phone </p>
+                <p><%= del_phone %></p>
+                <p class="label">Address</p>
+                <p><%= del_address %></p>
+                <p class="label">Pincode</p>
+                <p><%= del_pincode %></p>
+            </div>
+        </div>
+        <form action="./intermediate_cart_order.jsp" method="post" class="payment-div box" onsubmit="return card_details_validate()">
+            <h1>Choose Payment Option</h1>
             <div class="payment-option">
-                <form action="./intermediate_cart_order.jsp" method="post">
                 <input type="radio" id="COD" name="payment_option" value="COD" onclick="hide_card()">
                 <label for="COD">Cash On Delivery</label>
                 <input type="radio" id="Card" name="payment_option" value="Card" onclick="show_card()">
@@ -87,12 +125,12 @@
             </div>
             <div class="address-div" style="display: none;">
                 <div class="input-box">
-                    <label for="card_holder_name">Card Holder Name</label>
-                    <input type="text" name="card_holder_name" id="card_holder_name">
+                    <label for="card-holder-name">Card Holder Name</label>
+                    <input name="card-holder-name" type="text" id="card_holder_name">
                 </div>
                 <div class="input-box">
-                    <label for="card_number">Card Number</label>
-                    <input type="text" name="card_number" id="card_number">
+                    <label for="card-number">Card Number</label>
+                    <input name="card-number" type="number" id="card_number">
                 </div>
                 <div class="input-box valid-date">
                     <label for="month">Valid Till</label>
@@ -111,6 +149,8 @@
                         <option value="december">December</option>
                       </select>
                 </select>
+
+
                 <select name="year" id="year">
                     <option value="2021">2021</option>
                     <option value="2022">2022</option>
@@ -129,18 +169,23 @@
                     <label for="cvv">CVV</label>
                     <input type="password" name="cvv" id="cvv">
                 </div>
-                
-            </div>
-            <input type="hidden" name="del_name" value="<%= del_name %>">
+                <input type="hidden" name="del_name" value="<%= del_name %>">
             <input type="hidden" name="del_email" value="<%= del_email %>">
             <input type="hidden" name="del_phone" value="<%= del_phone %>">
             <input type="hidden" name="del_address" value="<%= del_address %>">
             <input type="hidden" name="del_pincode" value="<%= del_pincode %>">
-            <input type="submit" value="Place Order">
-            </form>
-</body>
-</html>
-<%
+                
+            </div>
+            <div class="input-box procced-btn-div">
+                <button>Pay <span><%= pretty_print_price(Integer.toString(total_payable))%></span></button>
+            </div>
+
+        </form>
+    </div>
+    <%
     con.close();
 } catch(Exception e){}
 %>
+</body>
+
+</html>

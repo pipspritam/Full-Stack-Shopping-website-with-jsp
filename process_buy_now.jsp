@@ -36,10 +36,10 @@
                     card_holder_name.style.border = "solid 3px red";
                     return false;
                 }
-                else if(card_holder_name.value.trim()=="")
+                else if(cvv.value.trim()=="")
                 {
-                    alert("Enter a valid card holder name");
-                    card_holder_name.style.border = "solid 3px red";
+                    alert("Enter CVV");
+                    cvv.style.border = "solid 3px red";
                     return false;
                 }
                 return true;
