@@ -72,6 +72,11 @@
     }
     %>
     <p>Total Payable: <strong><%= pretty_print_price(Integer.toString(total_payable)) %></strong></p>
+    <p>Delivery Name: <%= del_name %></p>
+    <p>Delivery Email: <%= del_email %></p>
+    <p>Delivery Phone: <%= del_phone %></p>
+    <p>Delivery Address: <%= del_address %></p>
+    <p>Delivery Pincode: <%= del_pincode %></p>
     <h1>Choose Payment Option</h1>
             <div class="payment-option">
                 <form action="./intermediate_cart_order.jsp" method="post">
