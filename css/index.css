@@ -147,6 +147,14 @@
     cursor: pointer;
     font-size: 20px;
   }
+  #selected{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #eb1717;
+    cursor: pointer;
+    font-size: 20px;
+  }
   .wishlist button:focus {
     color: red;
   }
