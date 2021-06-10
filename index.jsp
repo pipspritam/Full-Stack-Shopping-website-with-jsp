@@ -26,6 +26,7 @@
 </head>
 <body onload="setTimeout(myFunc, 2000)">
     <%
+        String email = (String)session.getAttribute("email");
         Statement stmt1=con.createStatement(); 
         ResultSet rs1=stmt1.executeQuery("select * from message_table");
         if(rs1.next()){
@@ -50,12 +51,12 @@
         
         Statement stmt=con.createStatement(); 
         ResultSet rs=stmt.executeQuery("select * from item");
-        
             while(rs.next())
             {
                 int discountPrice = (rs.getInt(3)*(100 - rs.getInt(6)))/100;
                 String imgName = rs.getString(1) + ".jpg";
                 String img_path = "./image/";
+                Statement stmt3=con.createStatement(); 
         %>
         
         <div class="product">
@@ -65,9 +66,20 @@
                     if(((String)session.getAttribute("email"))!=null){
                 %>
                         <form action="./add_wishlist.jsp" class="wishlist">
-                            <input type="hidden" name="pid" value="<%= rs.getString(1) %>">
+                        <input type="hidden" name="pid" value="<%= rs.getString(1) %>">
+                <%
+                ResultSet rs3=stmt3.executeQuery("select * from wishlist where email = '" + email + "' and product_id='" + rs.getString(1) + "'");
+                if(!rs3.next()){
+                %>
                             <button><i class="fas fa-heart"></i></button>
-                        </form>
+                <%
+                    } else {
+                %>
+                    <button><i class="fas fa-heart" id="selected"></i></button>
+                <%
+                    }
+                %>
+                </form>
                 <% 
                 } else {
                     %>
