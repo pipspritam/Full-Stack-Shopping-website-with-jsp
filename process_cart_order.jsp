@@ -96,6 +96,10 @@
             <%
     }
     %>
+
+    <div class="payable">
+        <p>Total Payable: <%= pretty_print_price(Integer.toString(total_payable)) %></p>
+    </div>
             
 
         </div>

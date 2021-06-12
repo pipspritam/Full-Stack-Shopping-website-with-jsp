@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  img {
+    max-width: 100%;
+  }
+  .container {
+    width: min(90%, 60rem);
+    margin: 30px auto;
+  }
+  
+  .box {
+    margin: 15px 0;
+    padding: 15px 30px;
+    box-shadow: 1px 2px 10px -3px rgb(0 0 0 / 56%);
+    border-radius: 5px;
+  }
+  .box h2 {
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+  }
+  .item {
+    display: grid;
+    grid-template-columns: 2fr 4fr 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid lightgrey;
+  }
+  .item:last-child {
+    border-bottom: none;
+  }
+  
+  .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .details .price {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  .details .price strike {
+    font-size: 20px;
+    font-weight: 500;
+    color: gray;
+  }
+  .details .price p {
+    font-size: 19px;
+    color: green;
+  }
+  .btn-div button {
+    border: none;
+    outline: none;
+    background-color: #fb641b;
+    color: white;
+    width: 150px;
+    height: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .btn-div button:nth-child(2) {
+    background-color: #ff9f00;
+  }
+  
+  .delete {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: gray;
+    font-size: 25px;
+    height: 40px;
+    width: 40px;
+    justify-self: center;
+    align-self: center;
+  }
+  .delete:hover {
+    color: black;
+  }
+  
