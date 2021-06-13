@@ -46,13 +46,13 @@ while(rs1.next())
 
                     <div class="btn-div">
                         
-                        <button formaction="#">Buy Now</button>
-                        <button>Add To Cart</button>
+                        <input type="hidden" name="ID" value="<%= rs1.getString(2) %>">
+                        <button formaction="./buy_now.jsp">Buy Now</button>
+                        <button formaction="./add_to_cart.jsp">Add To Cart</button>
 
                     </div>
 
                 </div>
-                <input type="hidden" name="pid" value="<%= rs1.getString(2) %>">
                 <button class="delete fas fa-trash" formaction="./remove_from_wishlist.jsp">
                 </button>
             </form>
