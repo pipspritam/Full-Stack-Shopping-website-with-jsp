@@ -7,7 +7,6 @@
         
            <input type="file" name="uploadfile" size="50">  
          
-          
        <br>	
            <input type="submit" name="Submit" value="Upload">  
            <input type="reset" name="Reset" value="Cancel">  

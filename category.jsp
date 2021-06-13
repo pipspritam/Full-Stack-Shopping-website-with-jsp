@@ -36,6 +36,14 @@
     int i2=stmt1.executeUpdate("delete from message_table");
         }
     %>
+    <ul class="header-links">
+        <li><a href="./category.jsp?cat=Electronics">Electronics</a></li>
+        <li><a href="./category.jsp?cat=Appliances">Appliances</a></li>
+        <li><a href="./category.jsp?cat=Men">Men</a></li>
+        <li><a href="./category.jsp?cat=Woman">Woman</a></li>
+        <li><a href="./category.jsp?cat=Sports">Sports</a></li>
+        <li><a href="./category.jsp?cat=Books">Books</a></li>
+    </ul>
     <div class="container">
         <%
         try {
