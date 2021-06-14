@@ -1,53 +1,40 @@
-<html>
-    <head>
-        <%@ include file="dbconnect.jsp"%>
-        <%@ include file="navbar.jsp"%>
-        <%@ page contentType="text/html" pageEncoding="UTF-8"%>
-           
-    </head>
-    <body>
-        
-        <div>
-            <center><h1>Account Details</h1></center>
+<%@ include file="dbconnect.jsp"%>
+<%@ include file="navbar.jsp"%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./css/account.css">
+    <title>Account Details</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>Account Details</h2>
             <% 
             Statement stmt=con.createStatement();
             String email=(String)session.getAttribute("email");
             ResultSet rs=stmt.executeQuery("select * from users where email='"+email+ "'");
             if(rs.next())
             {
-                %> <form action="logout.jsp" method="POST">
-                    <div >
-                        <table >
-                            <tr>
-                                <td>Name: </td>
-                                <td><%=rs.getString("name")%></td>
-                            </tr>
-                            <tr>
-                                <td>Email: </td>
-                                <td><%=rs.getString("email")%></td>
-                            </tr>
-                            <tr>
-                                <td>Phone: </td>
-                                <td><%=rs.getString("phone")%></td>
-                            </tr>
-                            <tr>
-                                <td>Address: </td>
-                                <td><Address><%=rs.getString("address")%></Address></td>
-                            </tr>
-                            <tr>
-                                <td>Pincode: </td>
-                                <td><%=rs.getString("pincode")%></td>
-                            </tr>
-                            
-                            <tr>
-                                <td></td><td><a href="edit_account.jsp">Edit account</a></td>
-                            </tr>
-                            
-                            
-                        </table>
-                    </div>
-                    </form>
-                <% } %>
-        </div>   
-    </body>
+                %>
+            <div class="details col-2">
+                <p class="label">Name</p>
+                <p><%=rs.getString("name")%></p>
+                <p class="label">Email</p>
+                <p><%=rs.getString("email")%></p>
+                <p class="label">Phone</p>
+                <p><%=rs.getString("phone")%></p>
+                <p class="label">Pincode</p>
+                <p><%=rs.getString("pincode")%></p>
+                <p class="label">Address</p>
+                <p><%=rs.getString("address")%></p>
+            </div>
+            <a href="edit_account.jsp" class="edit-btn">Edit Details</a>
+        </div>
+        <% } %>
+    </div>
+
+</body>
 </html>

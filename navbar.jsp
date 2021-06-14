@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="./css/navbar.css">
 </head>
-
 <body>
     <nav class="navbar">
         <a href="./index.jsp" class="logo"><i class="fab fa-pied-piper-alt"></i>
@@ -38,17 +35,10 @@
         <ul class="menu">
             <li><a href="./cart.jsp">Cart</a></li>
             <li>
-                <a href="./login.jsp">Login</a>
-                
+                <a href="./login.jsp">Login</a> 
             </li>
         </ul>
-
-
         <% } %>
-
     </nav>
-
-
 </body>
-
 </html>

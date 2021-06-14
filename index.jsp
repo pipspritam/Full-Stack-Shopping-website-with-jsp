@@ -10,7 +10,6 @@
                 for (int i = 1; i < desc_list.length; i++) {
                     new_Desc += "<br>&bull; " + desc_list[i];
                 }
-
              return new_Desc;
         }
     %>
