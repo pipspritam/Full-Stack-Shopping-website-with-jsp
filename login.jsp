@@ -14,23 +14,22 @@
         }
 
         body {
-            background-color: #262b31;
+            background-color: #fff;
             font-family: 'Poppins', sans-serif;
         }
 
         .container {
-            
-            background-color: #181c20;
+
+            background-color: #2874f0;
             color: white;
             padding: 40px;
-            width: 25%;
+            width: 35%;
             text-align: center;
-           
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            box-shadow: 10px 10px 10px black;
+            box-shadow: 1px 2px 10px -3px rgb(0 0 0 / 56%);
         }
 
         .container h1 {
@@ -45,41 +44,44 @@
         .container input[type="password"] {
             display: block;
             width: 55%;
-         
+
             margin-top: 10px;
             margin-bottom: 15px;
             margin-left: auto;
             margin-right: auto;
-            background: none;
+            background-color: #fff;
             padding: 10px;
-            border: 2px solid #3498db;
+            border: 2px solid #fff;
             border-radius: 30px;
             text-align: center;
             outline: none;
             padding: 14px 10px;
-            color: white;
+            color: black;
             font-size: 20px;
             transition: .3s;
         }
+
         .container input[type="submit"] {
             display: block;
             width: 35%;
             text-transform: uppercase;
-         
+
             margin-top: 10px;
             margin-bottom: 15px;
             margin-left: auto;
             margin-right: auto;
-            background: none;
+            background-color: #fb641b;
             padding: 10px;
-            border: 2px solid #2ecc71;
+            color: white;
+            font-weight: bold;
             border-radius: 30px;
             text-align: center;
             outline: none;
             padding: 14px 10px;
-            color: white;
+            border: none;
             font-size: 15px;
             transition: .3s;
+            cursor: pointer;
         }
 
         .container input[type="email"]:focus,
@@ -89,18 +91,14 @@
         }
 
         .container input[type="submit"]:hover {
-            background-color: #2ecc71;
-            font-weight: bold;
-        }
-        .container a{
-            text-decoration: none;
+            background-color: #ff9f00;
             color: white;
-            padding: 0;
-            border-bottom: 2px solid white;
         }
-
-        .container a:hover{
-            border-bottom: 2px transparent;
+        .link a {
+            text-decoration: none;
+            color: #ff6600;
+            padding: 0;
+            font-weight: bold;
         }
     </style>
     <script type="text/javascript">
@@ -137,7 +135,7 @@
             <input type="email" name="email" id="email" autocomplete="off" placeholder="Email">
             <input type="password" name="pass" id="pass" placeholder="Password">
             <input type="submit" value="Login">
-            <a href="./register.jsp">Dont Have an Account</a>
+            <div class="link">Don't Have An Account? <a href="./register.jsp">Sign Up</a></div>
         </form>
     </div>
 </body>

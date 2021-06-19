@@ -91,7 +91,8 @@
                 <%
                     } else {
                 %>
-                    <p>Cannot place order</p>
+                
+                    <p class="error">Cannot place order</p>
                 <%
                     }
                 %>

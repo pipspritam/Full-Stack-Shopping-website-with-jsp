@@ -12,9 +12,14 @@
 <html>
     <head>
         <link rel="stylesheet" href="./css/bill.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     </head>
     <body onload="window.print()">
         <div class="container">
+            <div class="logo-bill">
+                <i class="fab fa-pied-piper-alt"></i>
+                <h2>Pied Piper</h2>
+            </div>
             <div class="col-2">
     
                 <div class="bill-ship order-div">

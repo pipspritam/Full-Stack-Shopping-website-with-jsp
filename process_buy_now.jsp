@@ -188,8 +188,10 @@
             else
             {
     %>
+                <div class="error-msg">
                 <h1>Quantity unavailable</h1>
                 <a href="./index.jsp">Go back to previous page</a>
+            </div>
     <%
             }
     con.close();

@@ -6,10 +6,24 @@
   img {
     width: 100%;
   }
+  
   .container {
     width: min(80%, 60rem);
     margin: 0 auto;
     height: auto;
+  }
+  .logo-bill
+  {
+    font-size: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    gap: 5px;
+  }
+  .logo-bill i{
+    font-size: 50px;
   }
   .order-div {
     margin: 15px 0;

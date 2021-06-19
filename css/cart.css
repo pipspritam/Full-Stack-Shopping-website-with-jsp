@@ -192,3 +192,7 @@ body{
 
     text-decoration: none;
 }
+.error
+{
+    color: red;
+}
