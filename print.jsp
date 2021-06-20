@@ -63,7 +63,6 @@
                         <p><%= rs1.getString("buy_date") %></p>
                         <p class="label">Time </p>
                         <p><%= rs1.getString("buy_time") %></p>
-    
                     </div>
                 </div>
                 <div class="order-div">
