@@ -94,6 +94,7 @@
                 <label class="label">Conform Password</label>
                 <input id="cpass" type="password" name="conformpassword" value="<%=rs.getString("password")%>">
                 <input class="edit-btn" type="Submit" value="Update">
+                <button class="edit-btn" formaction="account.jsp">Cancel</button>
             </form>
             <% } %>
         </div>

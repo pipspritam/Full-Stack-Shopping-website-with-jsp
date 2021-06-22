@@ -16,11 +16,12 @@
         </form>
         <%
             if(((String)session.getAttribute("email"))!=null){
+                String name = (String)session.getAttribute("name");
         %>
         <ul class="menu">
             <li><a href="./cart.jsp">Cart</a></li>
             <li>
-                <a href=""><%= (String)session.getAttribute("name") %></a>
+                <a href=""><%= name.split(" ", 0)[0] %></a>
                 <ul class="submenu">
                     <li><a href="account.jsp">My Profile</a></li>
                     <li><a href="./my_orders.jsp">Orders</a></li>

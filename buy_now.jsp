@@ -109,6 +109,7 @@
             <div class="procced-btn-div">
                 <input  type="submit" value="PROCESS ORDER">
             </div>
+            <button class="proceed-btn-div" formaction="index.jsp">Cancel</button>
         </form>
     </div>
     <% 

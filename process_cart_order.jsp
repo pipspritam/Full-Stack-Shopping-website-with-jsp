@@ -57,7 +57,7 @@
                 return true;
             }
             else {  
-                alert("Select a patment method");
+                alert("Select a payment method");
                 return false; 
             }
         }
@@ -183,7 +183,10 @@
             <div class="input-box procced-btn-div">
                 <button>Pay <span><%= pretty_print_price(Integer.toString(total_payable))%></span></button>
             </div>
-
+            
+        </form>
+        <form>
+            <button formaction="./place_order.jsp">Cancel</button>
         </form>
     </div>
     <%

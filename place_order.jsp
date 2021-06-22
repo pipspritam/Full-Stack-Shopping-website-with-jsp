@@ -120,8 +120,8 @@
                     <div class="procced-btn-div">
                         <button>Process Order</button>
                     </div>
+                    <button formaction="./cart.jsp">Cancel</button>
                 </form>
-
             </div>
         </div>
     </div>

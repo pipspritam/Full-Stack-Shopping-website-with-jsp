@@ -58,6 +58,7 @@
     font-weight: 600;
     margin: 10px auto;
     border-radius: 5px;
+    outline: none;
   }
   .details input,
   .details textarea {
