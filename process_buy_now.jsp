@@ -180,6 +180,7 @@
             <div class="input-box procced-btn-div">
                 <input type="submit" value="Pay <%= pretty_print_price(Integer.toString(payable)) %>">
             </div>
+            <button formaction="./buy_now.jsp">Cancel</button>
 
         </form>
     </div>
@@ -191,7 +192,7 @@
                 <div class="error-msg">
                 <h1>Quantity unavailable</h1>
                 <a href="./index.jsp">Go back to previous page</a>
-            </div>
+                </div>
     <%
             }
     con.close();
