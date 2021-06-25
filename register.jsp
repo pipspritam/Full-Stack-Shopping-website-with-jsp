@@ -185,7 +185,8 @@
                 <input type="submit" value="Register">
                 <div class="link">Already Have An Account? <a href="login.jsp">Log In</a></div>
             </form>
-        
+        </div>
+    
         
     </body>
 </html>
