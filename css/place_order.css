@@ -78,7 +78,7 @@
     grid-column: span 2;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin-top: 15px;
   }
   .procced-btn-div button {

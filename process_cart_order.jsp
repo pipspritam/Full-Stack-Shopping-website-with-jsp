@@ -181,13 +181,12 @@
                 
             </div>
             <div class="input-box procced-btn-div">
+                <a href="./index.jsp">Cancel</a>
                 <button>Pay <span><%= pretty_print_price(Integer.toString(total_payable))%></span></button>
             </div>
             
         </form>
-        <form>
-            <button formaction="./place_order.jsp">Cancel</button>
-        </form>
+        
     </div>
     <%
     con.close();

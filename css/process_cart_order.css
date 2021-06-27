@@ -98,10 +98,10 @@
   .procced-btn-div {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin-top: 15px;
   }
-  .procced-btn-div button {
+  .procced-btn-div button , .procced-btn-div a{
     border: none;
     outline: none;
     background-color: #fb641b;

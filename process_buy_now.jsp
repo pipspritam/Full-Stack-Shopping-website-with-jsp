@@ -178,13 +178,12 @@
             </div>
       
             <div class="input-box procced-btn-div">
+                <a class="cancel" href="./index.jsp">Cancel</a>
                 <input type="submit" value="Pay <%= pretty_print_price(Integer.toString(payable)) %>">
             </div>
             
         </form>
-        <form>
-        <button formaction="./index.jsp">Cancel</button>
-        </form>
+        
     </div>
     <%
             }

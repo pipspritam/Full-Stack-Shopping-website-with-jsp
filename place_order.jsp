@@ -118,9 +118,10 @@
                         <textarea  cols="30" rows="6" name="address" id="address"><%= rs1.getString("address") %></textarea>
                     </div>
                     <div class="procced-btn-div">
+                        <button formaction="./cart.jsp">Cancel</button>
                         <button>Process Order</button>
                     </div>
-                    <button formaction="./cart.jsp">Cancel</button>
+                    
                 </form>
             </div>
         </div>
