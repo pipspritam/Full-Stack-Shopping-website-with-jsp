@@ -16,5 +16,6 @@
         }
         response.sendRedirect("index.jsp?message="+"Item added to cart");
     } catch (Exception e){
+        out.print("Exception");
     }
 %>
