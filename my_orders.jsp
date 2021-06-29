@@ -64,7 +64,9 @@
                 
                 <%
             }
-        }catch(Exception e){}
+        }catch(Exception e){
+            out.print(e);
+        }
     }
 %>
 </div>
