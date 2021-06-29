@@ -5,8 +5,8 @@
         <%
         try
         {
-            String newpassword=request.getParameter("newpassword");
-            String conformpassword=request.getParameter("conformpassword");
+            String newpassword=request.getParameter("pass");
+            String conformpassword=request.getParameter("cpass");
             String name = request.getParameter("name");
             String email = request.getParameter("email");
             String phone = request.getParameter("phone");
