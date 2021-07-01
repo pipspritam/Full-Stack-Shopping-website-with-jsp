@@ -42,35 +42,45 @@
                 <div class="box-title">Products</div>
             </div>
         </div>
-        <% } %>
-
         <div class="order-div">
             <h1 class="title">Orders</h1>
-
+            <%
+            Statement stmt3=con.createStatement(); 
+            ResultSet rs3=stmt3.executeQuery("select * from orders");
+            int count = 0;
+            while(count < 10 && rs3.next())
+            {
+                String imgName = rs3.getString("product_id") + ".jpg";
+                String img_path = "../image/";
+            %>
             <div class="my-order">
                 <div class="my-order-details">
-                    <img src="product-1.jpg" alt="">
+                    <img src="<%= img_path+imgName %>" alt="./image/product-1.jpg" onerror="this.onerror=null; this.src='./image/default.jpg'">
                     <div class="context">
-                        <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolor nihil sint
-                            deleniti
-                            nisi sed.</h3>
-                        <p>Order id : <span>12313131</span></p>
-                        <p>Quantity : <span>1</span></p>
-                        <p>Date : <span>12/123/13</span></p>
-                        <p>Payment Method : <span>card</span></p>
+                        <h3><%= rs3.getString("product_name") %></h3>
+                        <p>Order id : <span><%= rs3.getString("order_id") %></span></p>
+                        <p>Quantity : <span><%= rs3.getString("quantity") %></span></p>
+                        <p>Date : <span><%= rs3.getString("buy_date") %></span></p>
+                        <p>Payment Method : <span><%= rs3.getString("payment_method") %></span></p>
                     </div>
                 </div>
                 <div class="price-div">
-                    <h3><span>&#8377;</span>43252</h3>
-                    <form action="">
+                    <h3><span>&#8377;</span><%= rs3.getString("total_payable") %></h3>
+                    <form action="./admin_print.jsp" target="_blank">
+                        <input type="hidden" name="order_id" value="<%= rs3.getString("order_id") %>">
+                        <input type="hidden" name="email" value="<%= rs3.getString("user_email") %>">
                         <button class="print-btn">Print</button>
                     </form>
 
                 </div>
             </div>
+            <% 
+                count++;
+            } %>
         </div>
 
     </div>
+    <% } %>
 </body>
 
 </html>
