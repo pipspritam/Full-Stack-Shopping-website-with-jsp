@@ -40,7 +40,7 @@
         <li><a href="./category.jsp?cat=Electronics">Electronics</a></li>
         <li><a href="./category.jsp?cat=Appliances">Appliances</a></li>
         <li><a href="./category.jsp?cat=Men">Men</a></li>
-        <li><a href="./category.jsp?cat=Woman">Woman</a></li>
+        <li><a href="./category.jsp?cat=Women">Women</a></li>
         <li><a href="./category.jsp?cat=Sports">Sports</a></li>
         <li><a href="./category.jsp?cat=Books">Books</a></li>
     </ul>
@@ -49,7 +49,7 @@
         try {
         String cat = request.getParameter("cat");
         Statement stmt=con.createStatement(); 
-        ResultSet rs=stmt.executeQuery("select * from item where upper(category) like upper('%"+cat+"%')");
+        ResultSet rs=stmt.executeQuery("select * from item where category='" + cat + "'");
         boolean flag = false;
         
         %>
