@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  a {
+    text-decoration: none;
+  }
+  .container {
+    width: min(90%, 70rem);
+    margin: 30px auto;
+  }
+  .container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .box {
+    padding: 30px;
+    box-shadow: 1px 2px 10px -3px rgb(0 0 0 / 56%);
+  }
+  .col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .box p {
+    font-size: 22px;
+  }
+  .label {
+    font-weight: 600;
+    position: relative;
+  }
+  .label::after {
+    content: ":";
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .product-id {
+    font-size: 1.6rem;
+    grid-column: span 2;
+  }
+  .btn {
+    text-decoration: none;
+    border: none;
+    outline: none;
+    color: white;
+    width: 50%;
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    background-color: #fb641b;
+  }
+  
+  .input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 5px;
+  }
+  .input-box label {
+    font-size: 20px;
+  }
+  .input-box input,
+  .input-box select,
+  .input-box textarea {
+    padding: 5px 10px;
+    font-size: 20px;
+  }
+  .text-area {
+    grid-column: span 2;
+  }
+  .add-btn {
+    justify-self: end;
+  }
+  

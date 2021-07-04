@@ -46,5 +46,5 @@
         response.sendRedirect("cart_bill.jsp");
 %>
 <%
-    } catch (Exception e){out.print("EXc");}
+    } catch (Exception e){out.print("Exception");}
 %>
