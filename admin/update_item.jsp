@@ -21,7 +21,7 @@
             if(numberOfProducts > 0){
         %>
             <div class="container">
-                <div class="col-2">
+                <div class="gap">
         <%
             while(rs.next())
             {

@@ -74,6 +74,10 @@
   .text-area {
     grid-column: span 2;
   }
+  .input-box textarea
+  {
+    resize: none;
+  }
   .add-btn {
     justify-self: end;
   }

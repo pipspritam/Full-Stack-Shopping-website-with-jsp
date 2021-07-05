@@ -1,113 +1,44 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            padding: 0;
-            margin: 0;
-            background-color: #ffffff;
-            color: black;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .navbar {
-            font-family: 'Poppins', sans-serif;
-            padding: 10px 5%;
-            color: white;
-            background-color: #181c20;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-        .navbar h1 a{
-            text-decoration: none;
-            color: white;
-            transition: 300ms;
-        }
-        .navbar h1 a:hover{
-            
-            color: #2ecc71;
-        }
-
-
-        .navbar h1{
-            margin-right: auto;
-        }
-
-        .navbar ul {
-            list-style: none;
-          
-        }
-
-        .navbar ul li {
-            display: inline-block;
-            text-decoration: none;
-            padding: 0 20px;
-            font-size: 18px;
-        }
-
-        .navbar ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .navbar button {
-            background: none;
-            padding: 10px 20px;
-            margin-left: 30px;
-          
-            color: white;
-            border: 2px solid #2ecc71;
-            border-radius: 20px;
-            transition: .3s;
-            font-weight: bold;
-        }
-
-        .navbar button a {
-            text-decoration: none;
-            color: white;
-        }
-
-        .navbar button:hover {
-            background-color: #2ecc71;
-           
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="../css/admin_navbar.css">
 </head>
 
 <body>
     <nav class="navbar">
-        <h1><a href="./admin_index.jsp">LOGO</a></h1>
-        <ul>
+        <a href="./admin_index.jsp" class="logo"><i class="fab fa-pied-piper-alt"></i>
+            <h2>Pied Piper - Admin Panel</h2>
+        </a>
+
+        <ul class="menu">
             <%
             if(((String)session.getAttribute("admin_email"))==null){
 
                 %>
-                <li><a href="./admin_login.jsp">Add Item</a></li>
-                <li><a href="./admin_login.jsp">Update Item</a></li>
-                <a href="./admin_login.jsp"><button>Log in</button></a>
-                <%
+            <li><a href="./admin_login.jsp">Add Item</a></li>
+            <li><a href="./admin_login.jsp">Update Item</a></li>
+            <li><a class="logout" href="./admin_login.jsp">Login</a></li>
+            <%
 
             }
             else {
                 %>
-
                 <li><a href="./add_item.jsp">Add Item</a></li>
-                <li><a href="./update_item.jsp">Update Item</a></li>
-                <a href="./admin_logout.jsp"><button>Log out</button></a>
-                <%
+            <li><a href="./update_item.jsp">Update Item</a></li>
+            <li><a class="logout" href="./admin_logout.jsp">logout</a></li>
+            <%
             }
 
             %>
+
         </ul>
+
     </nav>
+
+
 </body>
 
 </html>

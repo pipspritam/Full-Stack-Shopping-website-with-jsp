@@ -21,6 +21,9 @@
     grid-template-columns: 1fr 1fr;
     gap: 15px;
   }
+  .gap > div {
+    margin-bottom: 20px;
+  }
   .box p {
     font-size: 22px;
   }
@@ -67,6 +70,11 @@
   }
   .text-area {
     grid-column: span 2;
+    
+  }
+  .text-area textarea
+  {
+    resize: none;
   }
   .add-btn {
     grid-column-start: 2;
