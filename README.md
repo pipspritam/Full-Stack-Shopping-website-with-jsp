@@ -24,7 +24,8 @@ This is an implementation of an e-commerce website where users can buy products 
 * Admin Home - shopping_website_with_jsp/admin/admin_index.jsp
 ## Tables used
 1. ITEM
-    * `CREATE TABLE  "ITEM" 
+    ``` sql
+    CREATE TABLE  "ITEM" 
    (	"PRODUCT_ID" VARCHAR2(30), 
 	"PRODUCT_NAME" NVARCHAR2(500), 
 	"PRICE" NUMBER, 
@@ -34,7 +35,8 @@ This is an implementation of an e-commerce website where users can buy products 
 	"COMPANY" VARCHAR2(30), 
 	"CATEGORY" VARCHAR2(30), 
 	 PRIMARY KEY ("PRODUCT_ID") ENABLE
-   ) ;`
+   ) ; 
+   ```
    * Item table used for storing information about all products in the inventory. These include, 
         * Product id (primary key)
         * Product name
@@ -46,7 +48,8 @@ This is an implementation of an e-commerce website where users can buy products 
         * Category
 
 2. USERS
-    * `CREATE TABLE  "USERS" 
+    ``` sql
+    CREATE TABLE  "USERS" 
    (	"NAME" VARCHAR2(30), 
 	"EMAIL" VARCHAR2(30), 
 	"PHONE" VARCHAR2(12), 
@@ -55,6 +58,7 @@ This is an implementation of an e-commerce website where users can buy products 
 	"PINCODE" NUMBER(6,0), 
 	 PRIMARY KEY ("EMAIL") ENABLE
    ) ;
+    ```
    * Users table is used for storing information about all the registered users of this website. These include
         * Name
         * Email (primary key)
@@ -64,19 +68,22 @@ This is an implementation of an e-commerce website where users can buy products 
         * Pincode
 `
 3. CART
-    * `CREATE TABLE  "CART" 
+    ``` sql
+    CREATE TABLE  "CART" 
    (	"PRODUCT_ID" VARCHAR2(30), 
 	"EMAIL" VARCHAR2(30), 
 	"QUANTITY" NUMBER(5,0), 
 	 PRIMARY KEY ("EMAIL", "PRODUCT_ID") ENABLE
-   ) ;`
+   ) ;
+   ```
    * This table is used to store the products currently in a registered user's cart. This is achieved by combining two columns ( email and product id )to represent a primary key.
    * The columns in this table are as follows:
         * Product Id (primary key)
         * Email (primary key)
         * Quantity
 4. ORDERS
-    * `CREATE TABLE  "ORDERS" 
+    ``` sql
+    CREATE TABLE  "ORDERS" 
    (	"ORDER_ID" VARCHAR2(30), 
 	"BUY_DATE" VARCHAR2(10), 
 	"USER_EMAIL" VARCHAR2(30), 
@@ -93,8 +100,8 @@ This is an implementation of an e-commerce website where users can buy products 
 	"SHIPPING_EMAIL" VARCHAR2(30), 
 	"PRICE" NUMBER, 
 	 PRIMARY KEY ("ORDER_ID") ENABLE
-   ) ;`
-
+   ) ;
+    ```
    * This table is used to store all the processed orders in the website. This table is also used to show the order history of each user. The admin has access to the entire order history
    * This table has the following columns
         * Order Id (primary key)
@@ -114,10 +121,12 @@ This is an implementation of an e-commerce website where users can buy products 
         * Price
 
 5. TEMP_ORDER
-    * `CREATE TABLE  "TEMP_ORDER" 
+    ``` sql
+    CREATE TABLE  "TEMP_ORDER" 
    (	"ORDER_ID" VARCHAR2(30), 
 	"EMAIL" VARCHAR2(30)
-   ) ;`
+   ) ;
+   ```
    * The need for an intermediate table arose during the implementation of bill printing for items ordered through the cart, because passing multiple product ids through the same form and storing them in the target jsp page was not possible.
    * Hence, the cart product ids were transfered to this intermediate table, and during the generation of bill, this tabel was used to get all the required information. Once the date is retreived, this table is deleted of all data
    * The columns include
@@ -125,11 +134,13 @@ This is an implementation of an e-commerce website where users can buy products 
         * Email
 
 6. WISHLIST
-    * `CREATE TABLE  "WISHLIST" 
+    ``` sql
+    CREATE TABLE  "WISHLIST" 
    (	"EMAIL" VARCHAR2(30), 
 	"PRODUCT_ID" VARCHAR2(30), 
 	 PRIMARY KEY ("PRODUCT_ID", "EMAIL") ENABLE
-   ) ;`
+   ) ;
+   ```
    * Table used to store the items wishlisted by the website's registered users
    * This table is referred to while showing individual user's wishlist. 
    * The table has the following columns
@@ -137,13 +148,14 @@ This is an implementation of an e-commerce website where users can buy products 
         * Product Id (Primary key)
 
 7. ADMIN
-    * `CREATE TABLE  "ADMIN" 
+    ``` sql
+    CREATE TABLE  "ADMIN" 
    (	"NAME" VARCHAR2(30), 
 	"EMAIL" VARCHAR2(30), 
 	"PASSWORD" VARCHAR2(30), 
 	 PRIMARY KEY ("EMAIL") ENABLE
-   ) ;`
-
+   ) ;
+    ```
     * This table stores information about all the current admins of this website
     * The columns include
         * Name
@@ -151,9 +163,11 @@ This is an implementation of an e-commerce website where users can buy products 
         * Password
 
 8. MESSAGE_TABLE
-    * `CREATE TABLE  "MESSAGE_TABLE" 
+    ``` sql
+    CREATE TABLE  "MESSAGE_TABLE" 
    (	"MESSAGE" VARCHAR2(30)
-   ) ;`
+   ) ;
+   ```
    * Used to pass messages between backend and frontend while redirecting
    * Columns used
         * Message
