@@ -80,6 +80,8 @@
         </div>
 
     </div>
+    <% }else{ %>
+    <h1>PLEASE <a href="./admin_login.jsp">LOGIN</a> TO CONTINUE</h1>
     <% } %>
 </body>
 
