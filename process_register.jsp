@@ -17,14 +17,14 @@
             if(rs.next())
             {
                 
-                    %><center><h1 style="background-color:Tomato;">Already have an account with this email!!</h1></center><%
-                    %> <center><p>Try Again: <a href="register.jsp">Register</a></p></center> <%
+                    %><center><h1 >Already have an account with this email!!</h1></center><%
+                    %> <center><p>Try Again: <a style="color: #fb641b;" href="register.jsp">Register</a></p></center> <%
             }
             else
             {
                 int i=stmt.executeUpdate("insert into users values ('"+name+"','"+email+"','"+phone+"','"+newpassword+"','"+address+"','"+pincode+"')");
-                %><center><h1 style="background-color:rgb(65, 177, 50);"><%=name%>, You are registered successfully</h1></center><%
-                %> <center><p>Login here <a href="login.jsp">Login</a></p></center> <%
+                %><center><h1 ><%=name%>, You are registered successfully</h1></center><%
+                %> <center><p>Login here <a style="color: #fb641b;" href="login.jsp">Login</a></p></center> <%
             }
             con.close();
         }

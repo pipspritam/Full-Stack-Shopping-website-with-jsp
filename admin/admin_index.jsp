@@ -81,7 +81,7 @@
 
     </div>
     <% }else{ %>
-    <h1>PLEASE <a href="./admin_login.jsp">LOGIN</a> TO CONTINUE</h1>
+    <h1 style="text-align: center;">PLEASE <a href="./admin_login.jsp" style="color: #fb641b;">LOGIN</a> TO CONTINUE</h1>
     <% } %>
 </body>
 
