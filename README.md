@@ -1,4 +1,8 @@
 # Shopping website with jsp
+## Landing Page (Users)
+![homepage](./image/index.png)
+## Landing Page (Admin)
+![homepage](./image/admin.png)
 ## Authors
 * Ayush Nandi 
     * Email <ayush.idnan@gmail.com>

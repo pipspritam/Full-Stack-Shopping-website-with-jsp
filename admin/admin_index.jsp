@@ -55,7 +55,7 @@
             %>
             <div class="my-order">
                 <div class="my-order-details">
-                    <img src="<%= img_path+imgName %>" alt="./image/product-1.jpg" onerror="this.onerror=null; this.src='./image/default.jpg'">
+                    <img src="<%= img_path+imgName %>" alt="no image" onerror="this.onerror=null; this.src='../image/default.jpg'">
                     <div class="context">
                         <h3><%= rs3.getString("product_name") %></h3>
                         <p>Order id : <span><%= rs3.getString("order_id") %></span></p>
