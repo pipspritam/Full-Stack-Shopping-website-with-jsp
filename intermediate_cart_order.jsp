@@ -25,8 +25,9 @@
     try{
         Statement stmt=con.createStatement();
         ResultSet rs=stmt.executeQuery("select product_name, price, discount, item.quantity, cart.quantity,cart.product_id from item, cart where cart.product_id=item.product_id and cart.email='"+email+"'");
-        int total_payable = 0;
+        
         while(rs.next()){
+            int total_payable = 0;
             int final_price = (rs.getInt(2)*(100 - rs.getInt(3)))/100;
             total_payable += (final_price * rs.getInt(5));
             String order_id = get_order_id(rs.getString(6), email);
