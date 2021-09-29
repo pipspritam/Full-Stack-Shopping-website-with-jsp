@@ -22,7 +22,7 @@
     String payment_option = request.getParameter("payment_option");
     String quantity = request.getParameter("quantity") ;
     int qty = Integer.parseInt(quantity);
-    if(qty >= Integer.parseInt(rs4.getString(5))) {
+    if(qty > Integer.parseInt(rs4.getString(5))) {
         response.sendRedirect("./no_quantity.jsp");
     }
     else
