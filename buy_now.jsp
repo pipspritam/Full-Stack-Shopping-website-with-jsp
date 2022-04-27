@@ -72,7 +72,7 @@
                     <h3><%= rs.getString(2) %></h3>
                     <p>Price: <span>&#8377;</span><%= pretty_print_price(Integer.toString(final_price)) %> </p>
                     <div class="discount-price">
-                        <span>&#8377;</span><strike>500</strike><span>&emsp; 5% off</span>
+                        <span>&#8377;</span><strike><%= rs.getString(3)%></strike><span>&emsp; <%= rs.getString(6)%>% off</span>
                     </div>
                     <p>Quantity: <input type="number" min="1" name="quantity" id="quantity" value="1" max="9"></p>
                 </div>
