@@ -13,7 +13,7 @@
     * Github [@pipspritam](https://github.com/pipspritam "pipspritam profile")
     * Instagram [@pritam_pips](https://www.instagram.com/pritam_pips "Pritam's instagram")
 ## Website Objective
-This is an implementation of an e-commerce website where users can buy products online. It handles everything from Product viewing, adding cart items, to placing orders and handling transcations. This website is built on jsp (backend) and hrml/css/javascript (frontend)
+This is an implementation of an e-commerce website where users can buy products online. It handles everything from Product viewing, adding cart items, to placing orders and handling transcations. This website is built on jsp (backend) and html/css/javascript (frontend)
 
 ***
 
