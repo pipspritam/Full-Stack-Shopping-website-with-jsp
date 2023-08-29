@@ -24,8 +24,8 @@ This is an implementation of an e-commerce website where users can buy products 
 
 ***
 ## Home page files
-* User Home - shopping_website_with_jsp/index.jsp or Full-Stack-Shopping-website-with-jsp/index.jsp
-* Admin Home - shopping_website_with_jsp/admin/admin_index.jsp or Full-Stack-Shopping-website-with-jsp/admin/admin_index.jsp
+* User Home - Full-Stack-Shopping-website-with-jsp/index.jsp
+* Admin Home - Full-Stack-Shopping-website-with-jsp/admin/admin_index.jsp
 ## Tables used
 1. ITEM
     ``` sql
